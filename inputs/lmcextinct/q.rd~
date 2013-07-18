@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<resource schema="lmcextinct">
+  <meta name="title">Extinction within the LMC</meta>
+  <meta name="creationDate">2013-06-04T14:59:00Z</meta>
+  <meta name="description" format="plain">
+    LIRAE GROUP...
+  </meta>
+  <meta name="copyright">Free to use.</meta>
+  <meta name="creator.name">Patricio Ramirez, S.; Other, A.</meta>
+
+  <meta name="subject">Large Magellanic Cloud</meta>
+  <meta name="subject">Interstellar medium, nebulae</meta>
+  <meta name="subject">Extinction</meta>
+
+  <meta name="coverage">
+    <meta name="waveband">Optical</meta>
+  </meta>
+
+  <meta name="content.type">Catalog</meta>
+
+	<table id="exts" onDisk="True" adql="True">
+		<meta name="description">
+		  Extinction values within certain areas on the sky.
+		</meta>
+		<column name="bbox" type="box"
+		  unit="deg"
+		  description="Bounding box for the extinction data"/>
+		<column name="centerAlpha"
+		  required="True"
+		  ucd="pos.eq.ra;meta.main" unit="deg"
+		  tablehead="RA"
+		  description="Area center RA ICRS"
+		  verbLevel="1"/>
+		<column name="centerDelta"
+		  required="True"
+		  ucd="pos.eq.dec;meta.main" unit="deg"
+		  tablehead="Dec"
+		  description="Area center Declination ICRS"
+		  verbLevel="1"/>
+		<column name="ev_i"
+		  ucd="arith.diff;phys.absorption;em.opt.V;em.opt.I" unit="mag"
+		  tablehead="E(V-I)"
+		  description="Difference in extinction between V and I bands"
+		  verbLevel="1"/>
+		<column name="a_v"
+		  ucd="phys.absorption;em.opt.V" unit="mag"
+		  tablehead="A_V"
+		  description="Extinction in V"
+		  verbLevel="15"/>
+		<column name="a_i"
+		  ucd="phys.absorption;em.opt.I" unit="mag"
+		  tablehead="A_I"
+		  description="Extinction in I"
+		  verbLevel="15"/>
+	</table>
+</resource>

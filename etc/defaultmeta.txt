@@ -1,0 +1,27 @@
+publisher: Fill Out
+publisherID: ivo://x-unregistred
+contact.name: Fill Out
+contact.address: Ordinary street address.
+contact.email: Your email address
+contact.telephone: Delete this line if you don't want to give it
+creator.name: Could be same as contact.name
+creator.logo: a URL pointing to a small png
+
+_noresultwarning: Your query did not match any data.
+
+authority.creationDate: 2013-06-19 20:42:47.463375
+authority.title: Untitled data center
+authority.shortName: DaCHS standin
+authority.description: This should be a relatively terse \
+description of what you clam authority for.
+authority.referenceURL: (your DC's "contact" page, presumably)
+authority.managingOrg: ivo://x-unregistred/org
+organization.title: Unconfigured organization
+organization.description: Briefly describe the organization you're \
+running the dc for here.
+organization.referenceURL: http://your.institution/home
+
+site.description: This should be a relatively terse \
+description of your data center.  You must give sensible values \
+for all authority.* things before publishing your registry endpoint.
+
