@@ -19,40 +19,49 @@
 
   <meta name="content.type">Catalog</meta>
 
-  <table id="exts" onDisk="True" adql="True">
-    <meta name="description">
-      Extinction values within certain areas on the sky.
-    </meta>
-    <column name="bbox" type="box"
-      description="Bounding box for the extinction data"/>
-    <column name="centerAlpha"
-      ucd="pos.eq.ra;meta.main" unit="deg"
-      tablehead="RA"
-      description="Area center RA ICRS"/>
-    <column name="centerDelta"
-      ucd="pos.eq.dec;meta.main" unit="deg"
-      tablehead="Dec"
-      description="Area center Declination ICRS"/>
-    <column name="ev_i"
-      ucd="arith.diff;phys.absorption;em.opt.V;em.opt.I" unit="mag"
-      tablehead="E(V-I)"
-      description="Difference in extinction between V and I bands"/>
-    <column name="a_v"
-      ucd="phys.absorption;em.opt.V" unit="mag"
-      tablehead="A_V"
-      description="Extinction in V"/>
-    <column name="a_i"
-      ucd="phys.absorption;em.opt.I" unit="mag"
-      tablehead="A_I"
-      description="Extinction in I"/>
-  </table>
+	<table id="exts" onDisk="True" adql="True">
+		<meta name="description">
+		  Extinction values within certain areas on the sky.
+		</meta>
+		<column name="bbox" type="box"
+		  unit="deg"
+		  description="Bounding box for the extinction data"/>
+		<column name="centerAlpha"
+		  required="True"
+		  ucd="pos.eq.ra;meta.main" unit="deg"
+		  tablehead="RA"
+		  description="Area center RA ICRS"
+		  verbLevel="1"/>
+		<column name="centerDelta"
+		  required="True"
+		  ucd="pos.eq.dec;meta.main" unit="deg"
+		  tablehead="Dec"
+		  description="Area center Declination ICRS"
+		  verbLevel="1"/>
+		<column name="ev_i"
+		  ucd="arith.diff;phys.absorption;em.opt.V;em.opt.I" unit="mag"
+		  tablehead="E(V-I)"
+		  description="Difference in extinction between V and I bands"
+		  verbLevel="1"/>
+		<column name="a_v"
+		  ucd="phys.absorption;em.opt.V" unit="mag"
+		  tablehead="A_V"
+		  description="Extinction in V"
+		  verbLevel="15"/>
+		<column name="a_i"
+		  ucd="phys.absorption;em.opt.I" unit="mag"
+		  tablehead="A_I"
+		  description="Extinction in I"
+		  verbLevel="15"/>
 
-  <data id="import_content">
-    <sources pattern="data/*.txt"/>
-    <reGrammar topIgnoredLines="1">
-      <names>raMin, raMax, decMin, decMax, ev_i, a_v, a_i</names>
-    </reGrammar>
-
+	</table>
+	<!--<publish service="lmcextinct/q#exts" />-->
+	<data id="import_content">
+    	<sources pattern="resources/*.txt"/>
+    	<reGrammar topIgnoredLines="1">
+      		<names>raMin, raMax, decMin, decMax, ev_i, a_v, a_i</names>
+    	</reGrammar>
+    	<register services="__system__/tap#run"/>
 
     <make table="exts">
       <rowmaker id="build_exts" idmaps="*">

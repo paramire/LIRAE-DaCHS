@@ -1,0 +1,255 @@
+2013-07-28 18:10:08,931 [ERROR 5767] Failure trying to retrieve table definition for table prueba2.exts.  Please fix RD.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/svcs/service.py", line 522, in getTableSet
+    tables.append(mth.getTableDefForTable(row["tableName"]))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rsc/metatable.py", line 119, in getTableDefForTable
+    return base.caches.getRD(tableRec["sourceRD"]
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 603, in getRDCached
+    return _loadRDIntoCache(srcId, rdCache)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 556, in _loadRDIntoCache
+    cacheDict[canonicalRDId] = getRD(canonicalRDId, useRD=rd)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 471, in getRD
+    srcPath, inputFile = getRDInputStream(rd.sourceId)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 403, in getRDInputStream
+    raise base.RDNotFound(srcId)
+RDNotFound: resource descriptor u'prueba2/q' could not be located in file system
+2013-08-08 12:25:46,890 [ERROR 4196] While executing TAP job WuBuxK: Could not parse your query: Expected "SELECT" (at char 0), (line:1, col:1)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 298, in mapADQLErrors
+    unicode(excValue), "query"))
+ValidationError: Could not parse your query: Expected "SELECT" (at char 0), (line:1, col:1)
+2013-08-08 12:25:46,945 [ERROR 4196] Could not parse your query: Expected "SELECT" (at char 0), (line:1, col:1) (see info for traceback)
+None
+2013-08-08 12:26:12,003 [ERROR 4196] While executing TAP job eeugWG: Could not parse your query: Expected "SELECT" (at char 0), (line:1, col:1)
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 298, in mapADQLErrors
+    unicode(excValue), "query"))
+ValidationError: Could not parse your query: Expected "SELECT" (at char 0), (line:1, col:1)
+2013-08-08 12:26:12,026 [ERROR 4196] Could not parse your query: Expected "SELECT" (at char 0), (line:1, col:1) (see info for traceback)
+None
+2013-08-08 12:28:01,506 [ERROR 4196] While executing TAP job L5vZcz: No such field known: column 'ramin' could not be located in table metadata
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 301, in mapADQLErrors
+    unicode(excValue), "query"))
+ValidationError: No such field known: column 'ramin' could not be located in table metadata
+2013-08-08 12:28:01,526 [ERROR 4196] No such field known: column 'ramin' could not be located in table metadata (see info for traceback)
+None
+2013-08-08 12:28:48,576 [ERROR 4196] While executing TAP job 3D_zhh: No such field known: column 'ra' could not be located in table metadata
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 301, in mapADQLErrors
+    unicode(excValue), "query"))
+ValidationError: No such field known: column 'ra' could not be located in table metadata
+2013-08-08 12:28:48,598 [ERROR 4196] No such field known: column 'ra' could not be located in table metadata (see info for traceback)
+None
+2013-08-08 12:29:00,989 [ERROR 4196] While executing TAP job WT0mbj: invalid input syntax for type numeric: "RA"
+LINE 1: ...HOUT HOLD FOR SELECT * FROM lmcextinct.exts WHERE 'RA' = 78....
+                                                             ^
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 267, in runTAPJobNoState
+    svcs.mapDBErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/svcs/standardcores.py", line 314, in mapDBErrors
+    raise base.ui.logOldExc(base.ValidationError(unicode(excValue), "query"))
+ValidationError: invalid input syntax for type numeric: "RA"
+LINE 1: ...HOUT HOLD FOR SELECT * FROM lmcextinct.exts WHERE 'RA' = 78....
+                                                             ^
+
+2013-08-08 12:29:01,033 [ERROR 4196] invalid input syntax for type numeric: "RA"
+LINE 1: ...HOUT HOLD FOR SELECT * FROM lmcextinct.exts WHERE 'RA' = 78....
+                                                             ^
+ (see info for traceback)
+None
+2013-08-08 12:59:26,099 [ERROR 4196] While executing TAP job FbobIo: Could not locate Table 'lmcextinct.exts'
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 306, in mapADQLErrors
+    svcs.mapDBErrors(excType, excValue, excTb)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/svcs/standardcores.py", line 312, in mapDBErrors
+    excValue.what, excValue.lookedFor), "query"))
+ValidationError: Could not locate Table 'lmcextinct.exts'
+2013-08-08 12:59:26,120 [ERROR 4196] Could not locate Table 'lmcextinct.exts' (see info for traceback)
+None
+2013-08-08 12:59:47,623 [ERROR 4196] While executing TAP job pUqBA_: Could not locate Table 'lmcextinct.exts'
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 306, in mapADQLErrors
+    svcs.mapDBErrors(excType, excValue, excTb)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/svcs/standardcores.py", line 312, in mapDBErrors
+    excValue.what, excValue.lookedFor), "query"))
+ValidationError: Could not locate Table 'lmcextinct.exts'
+2013-08-08 12:59:47,655 [ERROR 4196] Could not locate Table 'lmcextinct.exts' (see info for traceback)
+None
+2013-08-11 15:23:08,966 [ERROR 5283] RD lmcextinct/q#exts faulty, ignored.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/registry/publication.py", line 299, in getRDs
+    allRDs.append(base.caches.getRD(rdPath, doQueries=False))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 589, in getRDCached
+    return getRD(srcId, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 471, in getRD
+    srcPath, inputFile = getRDInputStream(rd.sourceId)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 403, in getRDInputStream
+    raise base.RDNotFound(srcId)
+RDNotFound: resource descriptor 'lmcextinct/q#exts' could not be located in file system
+2013-08-11 16:11:55,040 [ERROR 5896] Error during UWS execution of job o0VL08
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 306, in mapADQLErrors
+    svcs.mapDBErrors(excType, excValue, excTb)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 144, in runTAPQuery
+    tdsForUploads=tdsForUploads, externalLimit=maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 242, in morphADQL
+    getFieldInfoGetter(metaProfile, tdsForUploads))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/__init__.py", line 50, in parseAnnotating
+    ctx = annotate(parsedTree, fieldInfoGetter)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 99, in annotate
+    _annotateTraverse(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 79, in _annotateTraverse
+    _annotateTraverse(c, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 79, in _annotateTraverse
+    _annotateTraverse(c, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 82, in _annotateTraverse
+    node.addFieldInfos(context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/nodes.py", line 460, in addFieldInfos
+    self.fieldInfos = fieldinfos.TableFieldInfos.makeForNode(self, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/fieldinfos.py", line 129, in makeForNode
+    tableNode.originalTable):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/utils/codetricks.py", line 578, in fun
+    cache[args] = origFun(*args)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 183, in getFieldInfos
+    td = mth.getTableDefForTable(adql.flatten(tableName))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rsc/metatable.py", line 119, in getTableDefForTable
+    return base.caches.getRD(tableRec["sourceRD"]
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 603, in getRDCached
+    return _loadRDIntoCache(srcId, rdCache)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 556, in _loadRDIntoCache
+    cacheDict[canonicalRDId] = getRD(canonicalRDId, useRD=rd)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 481, in getRD
+    rd = base.parseFromStream(rd, inputFile, context=context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 197, in parseFromStream
+    res = feedTo(rootStruct, eventSource, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 170, in feedTo
+    evProc.feed(type, name, payload)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 88, in feed
+    self._feedToStructured(type, name, value)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 64, in _feedToStructured
+    next = self.curParser.feedEvent(self.ctx, type, name, value)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/common.py", line 60, in feedEvent
+    return self.start_(ctx, name, value)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/structure.py", line 305, in start_
+    attDef = self.getAttribute(name)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/structure.py", line 276, in getAttribute
+    "%s elements have no %s attributes or children."%(self.name_, name))
+StructureError: At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource elements have no publish attributes or children.
+2013-08-11 16:11:55,126 [ERROR 5896] While executing TAP job o0VL08: At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource elements have no publish attributes or children.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 282, in runTAPJob
+    runTAPJobNoState(parameters, jobId, queryProfile, timeout)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 256, in runTAPJobNoState
+    parameters, jobId, queryProfile, timeout))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 240, in getQTableFromJob
+    tdsForUploads, maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 153, in runTAPQuery
+    adqlglue.mapADQLErrors(*sys.exc_info())
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 306, in mapADQLErrors
+    svcs.mapDBErrors(excType, excValue, excTb)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/taprunner.py", line 144, in runTAPQuery
+    tdsForUploads=tdsForUploads, externalLimit=maxrec)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 242, in morphADQL
+    getFieldInfoGetter(metaProfile, tdsForUploads))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/__init__.py", line 50, in parseAnnotating
+    ctx = annotate(parsedTree, fieldInfoGetter)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 99, in annotate
+    _annotateTraverse(node, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 79, in _annotateTraverse
+    _annotateTraverse(c, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 79, in _annotateTraverse
+    _annotateTraverse(c, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/annotations.py", line 82, in _annotateTraverse
+    node.addFieldInfos(context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/nodes.py", line 460, in addFieldInfos
+    self.fieldInfos = fieldinfos.TableFieldInfos.makeForNode(self, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/adql/fieldinfos.py", line 129, in makeForNode
+    tableNode.originalTable):
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/utils/codetricks.py", line 578, in fun
+    cache[args] = origFun(*args)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/protocols/adqlglue.py", line 183, in getFieldInfos
+    td = mth.getTableDefForTable(adql.flatten(tableName))
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rsc/metatable.py", line 119, in getTableDefForTable
+    return base.caches.getRD(tableRec["sourceRD"]
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 603, in getRDCached
+    return _loadRDIntoCache(srcId, rdCache)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 556, in _loadRDIntoCache
+    cacheDict[canonicalRDId] = getRD(canonicalRDId, useRD=rd)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/rscdesc.py", line 481, in getRD
+    rd = base.parseFromStream(rd, inputFile, context=context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 197, in parseFromStream
+    res = feedTo(rootStruct, eventSource, context)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 170, in feedTo
+    evProc.feed(type, name, payload)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 88, in feed
+    self._feedToStructured(type, name, value)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/xmlstruct.py", line 64, in _feedToStructured
+    next = self.curParser.feedEvent(self.ctx, type, name, value)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/common.py", line 60, in feedEvent
+    return self.start_(ctx, name, value)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/structure.py", line 305, in start_
+    attDef = self.getAttribute(name)
+  File "/usr/local/lib/python2.7/dist-packages/gavodachs-0.8.7-py2.7.egg/gavo/base/structure.py", line 276, in getAttribute
+    "%s elements have no %s attributes or children."%(self.name_, name))
+StructureError: At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource elements have no publish attributes or children.
+2013-08-11 16:11:55,146 [ERROR 5896] At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource elements have no publish attributes or children. (see info for traceback)
+None
