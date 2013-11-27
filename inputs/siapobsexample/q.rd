@@ -28,10 +28,7 @@
 		</meta>
 
 		<!--DESCRIPTION-->
-		<column name="bbox" type="box"
-		  unit="deg"
-		  description="Bounding box for the extinction data"/>
-		<!--SCS Cone columns-->
+		<!--SIAP columns-->
 		<column name="object"
 			 type="text"
 			 ucd="meta.id"
@@ -61,9 +58,14 @@
 
 			<!--SERVICIO TAP-->
 			<!-- qnd: Hack para hacer fitsProdGrammar mas rapido-->
-			<!-- Al utilizar productos es necesario //products#define rowgen(generador de columnas?)-->
+
 			<fitsProdGrammar qnd="True">
-				<!-- FALTA MAP FITS -->
+				<mapKeys>
+					<map key="object"> OBJECT </map>
+					<map key="centerDelta"> OBSDEC </map>
+					<map key="centerAlpha"> OBSRA </map>
+				</mapKeys>
+				<!-- Al utilizar productos es necesario //products#define, nos agrega ciertas culmanas a la tabla-->
 				<rowfilter procDef="__system__/products#define">
 						<bind key="table">"siapobsexample.spe"</bind>
 				</rowfilter>
@@ -72,18 +74,18 @@
     	<!--SERVICIO TAP-->
     	<register services="__system__/tap#run"/>
 
+    	<!--Crea tabla en la DB -->
 	    <make table="spe">
 	      <rowmaker id="build_spe" idmaps="*">
+	      	<var name="imageTitle">
+	      		"%s %s"%(@TELESCOP,@DATE-OBS) 
+	      	</var>
 	      	<apply procDef="//siap#computePGS"/>
     			<apply procDef="//siap#setMeta">
     				<!-- Falta como completar info -->
-    				<bind name="bandpassId">vars["FILTER"]</bind>
-    				<bind name="dateObs">vars["dateObs"]+vars["startTime"]+(
-        vars["endTime"]-vars["startTime"])/2</bind>
-    				<bind name="instrument">"%s, %s"%(vars["OBSERVAT"],
-        vars["TELESCOP"])</bind>
-    				<bind name="title"> vars["imageTitle"]</bind>
-	      	</apply>
+    				<bind name="title">vars["imageTitle"]</bind>
+    				<bind name="instrument"></bind>
+    			</apply>
 	      </rowmaker>
 	    </make>
   	</data>
@@ -93,7 +95,7 @@
 
   	<!--Servicio, Publicación-->
   	<service id="cone" allowed="form">
-	    <meta name="shortName">lmcextinct Siap</meta>
+	    <meta name="shortName">SIAP EXAMPLE</meta>
 	    <meta name="title">"Sample image access"</meta>
   		<meta name="testQuery.pos.ra">230.444</meta>
   		<meta name="testQuery.pos.dec">52.929</meta>
@@ -107,15 +109,6 @@
 			  <condDesc original="//siap#protoInput"/>
 			  <condDesc original="//siap#humanInput"/>
 			  <condDesc buildFrom="dateObs"/>
-			  <condDesc buildFrom="bandpassId" />
-			  <condDesc>
-			    <inputKey name="object" type="text"
-			        tablehead="Target Object"
-			        description="Object being observed, Simbad-resolvable form"
-			        ucd="meta.name" verbLevel="5" required="True">
-			        <values fromdb="object FROM siapobsexample.spe"/>
-			    </inputKey>
-			  </condDesc>
 			</dbCore>
   	</service>
 </resource>
