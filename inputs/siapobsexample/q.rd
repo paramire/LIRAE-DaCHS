@@ -22,16 +22,6 @@
 		<mixin>
 			//siap#pgs
 		</mixin>
-		<mixin
-
-
-
-			>
-			//obscore#publishSIAP
-		</mixin>
-
-
-
 
 		<meta name="description">
 		  Ejemplo SIAP+ObsCore.
@@ -66,7 +56,7 @@
 	<data id="import_content">
 			<!--RECURSOS FITs-->
 			<sources recurse="True">
-				<pattern> res/*.fits
+				<pattern> res/*.fits </pattern>
 			</sources>
 
 			<!--SERVICIO TAP-->
@@ -87,10 +77,12 @@
 	      	<apply procDef="//siap#computePGS"/>
     			<apply procDef="//siap#setMeta">
     				<!-- Falta como completar info -->
-    				<bind name="bandpassId"></bind>
-    				<bind name="dateObs"></bind>
-    				<bind name="instrument"> </bind>
-    				<bind name="title"> "TDT"</bind>
+    				<bind name="bandpassId">vars["FILTER"]</bind>
+    				<bind name="dateObs">vars["dateObs"]+vars["startTime"]+(
+        vars["endTime"]-vars["startTime"])/2</bind>
+    				<bind name="instrument">"%s, %s"%(vars["OBSERVAT"],
+        vars["TELESCOP"])</bind>
+    				<bind name="title"> vars["imageTitle"]</bind>
 	      	</apply>
 	      </rowmaker>
 	    </make>
@@ -98,13 +90,32 @@
 
 
 
+
   	<!--Servicio, Publicación-->
   	<service id="cone" allowed="form">
-	    <meta name="shortName">lmcextinct ConeSearch</meta>
-	    <meta name="title"></meta>
-	    <meta name="testQuery">
-	      	<meta name="ra">9.4076</meta>
-	      	<meta name="dec">9.6414</meta>
-	    </meta>
+	    <meta name="shortName">lmcextinct Siap</meta>
+	    <meta name="title">"Sample image access"</meta>
+  		<meta name="testQuery.pos.ra">230.444</meta>
+  		<meta name="testQuery.pos.dec">52.929</meta>
+  		<meta name="testQuery.size.ra">0.1</meta>
+  		<meta name="testQuery.size.dec">0.1</meta>
+	  	<publish render="siap.xml" sets="local"/>
+  		<publish render="form" sets="local" />
+
+	  	<!-- CORES -->
+			<dbCore id="query_images" queriedTable="spe">
+			  <condDesc original="//siap#protoInput"/>
+			  <condDesc original="//siap#humanInput"/>
+			  <condDesc buildFrom="dateObs"/>
+			  <condDesc buildFrom="bandpassId" />
+			  <condDesc>
+			    <inputKey name="object" type="text"
+			        tablehead="Target Object"
+			        description="Object being observed, Simbad-resolvable form"
+			        ucd="meta.name" verbLevel="5" required="True">
+			        <values fromdb="object FROM siapobsexample.spe"/>
+			    </inputKey>
+			  </condDesc>
+			</dbCore>
   	</service>
 </resource>
