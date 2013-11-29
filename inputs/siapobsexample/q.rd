@@ -29,37 +29,31 @@
 
 		<!--DESCRIPTION-->
 		<!--SIAP columns-->
-		<column name="object"
-			 type="text"
-			 ucd="meta.id"
-			 tablehead="Object"
-			 description="Object"
-			 verbLevel="1"/>
 		<column name="centerAlpha"
-		  required="True"
-		  ucd="pos.eq.ra;meta.main" unit="deg"
+		  ucd="pos.eq.ra;meta.main"
 		  tablehead="RA"
 		  description="Area center RA ICRS"
-		  verbLevel="1"/>
+		  verbLevel="10"/>
 		<column name="centerDelta"
-		  required="True"
-		  ucd="pos.eq.dec;meta.main" unit="deg"
+		  ucd="pos.eq.dec;meta.main"
 		  tablehead="Dec"
 		  description="Area center Declination ICRS"
-		  verbLevel="1"/>
+		  verbLevel="10"/>
 
 	</table>
 
   <rowmaker id="build_spe">
   	<var name="imageTitle">
-  		"%s %s"%(@TELESCOP,@DATE-OBS) 
+  		"%s %s"%(@TELESCOP,@DATE_OBS) 
   	</var>
   	<apply procDef="//siap#computePGS"/>
 		<apply procDef="//siap#setMeta">
 			<!-- Falta como completar info -->
 			<bind name="title">vars["imageTitle"]</bind>
 			<bind name="instrument">vars["TELESCOP"]</bind>
-		</apply>
+	</apply>
+	<map dest="centerDelta">@OBSDEC</map>
+	<map dest="centerAlpha">@OBSRA</map>
   </rowmaker>
 
 
@@ -70,11 +64,7 @@
 			
 			<!-- qnd: Hack para hacer fitsProdGrammar mas rapido-->
 			<fitsProdGrammar qnd="True">
-				<mapKeys>
-					<map key="object"> OBJECT </map>
-					<map key="centerDelta"> OBSDEC </map>
-					<map key="centerAlpha"> OBSRA </map>
-				</mapKeys>
+
 				<!-- Al utilizar productos es necesario //products#define, nos agrega ciertas culmanas a la tabla-->
 				<rowfilter procDef="__system__/products#define">
 						<bind key="table">"siapobsexample.spe"</bind>
@@ -105,7 +95,6 @@
 			<dbCore id="query_images" queriedTable="spe">
 			  <condDesc original="//siap#protoInput"/>
 			  <condDesc original="//siap#humanInput"/>
-			  <condDesc buildFrom="dateObs"/>
 			</dbCore>
   	</service>
 </resource>
