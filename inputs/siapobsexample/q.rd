@@ -26,7 +26,9 @@
 			collectionName="'LIRAE GROUP'"
 			ra="centerAlpha"
 			dec="centerDelta"
-			facilityName="ALMA">
+			title="imageTitle"
+			sResolution="0.5"
+			facilityName="'ALMA'">
 			//obscore#publishSIAP
 		</mixin>
 
