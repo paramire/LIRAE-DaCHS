@@ -50,15 +50,25 @@
 
 	</table>
 
+  <rowmaker id="build_spe">
+  	<var name="imageTitle">
+  		"%s %s"%(@TELESCOP,@DATE-OBS) 
+  	</var>
+  	<apply procDef="//siap#computePGS"/>
+		<apply procDef="//siap#setMeta">
+			<!-- Falta como completar info -->
+			<bind name="title">vars["imageTitle"]</bind>
+			<bind name="instrument">vars["TELESCOP"]</bind>
+		</apply>
+  </rowmaker>
+
+
 	<data id="import_content">
 			<!--RECURSOS FITs-->
-			<sources recurse="True">
-				<pattern> res/*.fits </pattern>
+			<sources recurse="True" pattern="res/*.fits">
 			</sources>
-
-			<!--SERVICIO TAP-->
+			
 			<!-- qnd: Hack para hacer fitsProdGrammar mas rapido-->
-
 			<fitsProdGrammar qnd="True">
 				<mapKeys>
 					<map key="object"> OBJECT </map>
@@ -73,21 +83,8 @@
 
     	<!--SERVICIO TAP-->
     	<register services="__system__/tap#run"/>
-
     	<!--Crea tabla en la DB -->
-	    <make table="spe">
-	      <rowmaker id="build_spe" idmaps="*">
-	      	<var name="imageTitle">
-	      		"%s %s"%(@TELESCOP,@DATE-OBS) 
-	      	</var>
-	      	<apply procDef="//siap#computePGS"/>
-    			<apply procDef="//siap#setMeta">
-    				<!-- Falta como completar info -->
-    				<bind name="title">vars["imageTitle"]</bind>
-    				<bind name="instrument">vars["TELESCOP"]</bind>
-    			</apply>
-	      </rowmaker>
-	    </make>
+	    <make table="spe" rowmaker="build_spe"/>
   	</data>
 
 
