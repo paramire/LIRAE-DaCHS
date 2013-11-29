@@ -84,7 +84,7 @@
     			<apply procDef="//siap#setMeta">
     				<!-- Falta como completar info -->
     				<bind name="title">vars["imageTitle"]</bind>
-    				<bind name="instrument"></bind>
+    				<bind name="instrument">vars["TELESCOP"]</bind>
     			</apply>
 	      </rowmaker>
 	    </make>
@@ -94,7 +94,7 @@
 
 
   	<!--Servicio, Publicación-->
-  	<service id="cone" allowed="form">
+  	<service id="siap" allowed="form">
 	    <meta name="shortName">SIAP EXAMPLE</meta>
 	    <meta name="title">"Sample image access"</meta>
   		<meta name="testQuery.pos.ra">230.444</meta>
