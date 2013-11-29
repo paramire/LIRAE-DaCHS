@@ -32,8 +32,8 @@
 		<column name="object"
 			 type="text"
 			 ucd="meta.id"
-			 tablehead="Object"
-			 description="Object"
+			 tablehead="object"
+			 description="object"
 			 verbLevel="1"/>
 		<column name="centerAlpha"
 		  required="True"
@@ -52,7 +52,7 @@
 
   <rowmaker id="build_spe">
   	<var name="imageTitle">
-  		"%s %s"%(@TELESCOP,@DATE-OBS) 
+  		"%s %s"%(@TELESCOP,@DATE_OBS) 
   	</var>
   	<apply procDef="//siap#computePGS"/>
 		<apply procDef="//siap#setMeta">
