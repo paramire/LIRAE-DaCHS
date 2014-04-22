@@ -330,3 +330,4 @@ gavo.utils.excs.Error: At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource e
 2013-08-11 16:34:36,339 [INFO 5896] taprunner executing SELECT A_V FROM lmcextinct.exts WHERE A_V > 0.09
 2013-08-11 16:34:36,363 [INFO 5896] Sending to postgres: SELECT A_V FROM lmcextinct.exts WHERE A_V > 0.09 LIMIT 2000
 2013-08-11 17:23:53,545 [WARNING 5896] Waking up after 43199.999984 seconds
+2014-04-22 18:20:25,785 [WARNING 6577] Removed stale PID file.
