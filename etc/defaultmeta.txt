@@ -7,7 +7,7 @@ contact.telephone: Delete this line if you don't want to give it
 creator.name: Could be same as contact.name
 creator.logo: a URL pointing to a small png
 
-_noresultwarning: Your query did not match any data.
+_noresultwarning: Your query did not match any data 123.
 
 authority.creationDate: 2013-06-19 20:42:47.463375
 authority.title: Untitled data center
