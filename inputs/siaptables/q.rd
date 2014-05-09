@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
-<resource schema="siapobsexample">
+<resource schema="siaptables">
   <meta name="title">SIAP Tables</meta>
   <meta name="creationDate">2013-11-26T14:59:00Z</meta>
   <meta name="description" format="plain">
@@ -16,7 +16,7 @@
   </meta>
   <meta name="content.type">Catalog</meta>
 
-	<table id="spe" onDisk="True" adql="True">
+	<table id="st" onDisk="True" adql="True">
 		<mixin>
 			//siap#pgs
 		</mixin>
@@ -26,7 +26,7 @@
 		</meta>
 	</table>
 
-  <rowmaker id="build_spe">
+  <rowmaker id="build_st">
   	<var name="imageTitle">
   		"%s %s"%(@TELESCOP,@DATE_OBS) 
   	</var>
@@ -55,7 +55,7 @@
    	<!--SERVICIO TAP-->
    	<register services="__system__/tap#run"/>
    	<!--Crea tabla en la DB -->
-    <make table="spe" rowmaker="build_spe"/>
+    <make table="st" rowmaker="build_st"/>
   </data>
 
  	<!--Servicio, Publicación-->
