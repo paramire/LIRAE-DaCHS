@@ -69,7 +69,7 @@
   	<publish render="siap.xml" sets="local"/>
  		<publish render="form" sets="local" />
   	<!-- CORES -->
-		<dbCore id="query_images" queriedTable="spe">
+		<dbCore id="query_images" queriedTable="st">
 		  <condDesc original="//siap#protoInput"/>
 		  <condDesc original="//siap#humanInput"/>
 		</dbCore>
