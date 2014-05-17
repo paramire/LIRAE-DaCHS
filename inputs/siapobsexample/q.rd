@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-
+<!---------------->
+<!--SIAP SERVICE-->
+<!---------------->
 <resource schema="siapobsexample">
   <meta name="title">SIAP ObcCoreDM Examples</meta>
   <meta name="creationDate">2013-11-26T14:59:00Z</meta>
