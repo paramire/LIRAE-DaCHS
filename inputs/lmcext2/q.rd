@@ -29,18 +29,18 @@
 		<column name="bbox" type="box"
 		  unit="deg"
 		  description="Bounding box for the extinction data"/>
-		<column name="centerAlpha"
+		<!--<column name="centerAlpha"
 		  required="True"
 		  ucd="pos.eq.ra;meta.main" unit="deg"
 		  tablehead="RA"
 		  description="Area center RA ICRS"
-		  verbLevel="1"/>
-		<column name="centerDelta"
+		  verbLevel="1"/>-->
+		<!--<column name="centerDelta"
 		  required="True"
 		  ucd="pos.eq.dec;meta.main" unit="deg"
 		  tablehead="Dec"
 		  description="Area center Declination ICRS"
-		  verbLevel="1"/>
+		  verbLevel="1"/>-->
 		<column name="ev_i"
 		  ucd="arith.diff;phys.absorption;em.opt.V;em.opt.I" unit="mag"
 		  tablehead="E(V-I)"
@@ -87,8 +87,8 @@
 	      	<meta name="dec">9.6414</meta>
 	    </meta>
 	    <dbCore queriedTable="ext2">
-		<condDesc original="//scs#humanInput"/>
-		<condDesc original="//scs#protoInput"/>
+				<condDesc original="//scs#humanInput"/>
+				<condDesc original="//scs#protoInput"/>
 	    </dbCore>
 	    <publish render="scs.xml" sets="local"/>
 	    <publish render="form" sets="local"/>
