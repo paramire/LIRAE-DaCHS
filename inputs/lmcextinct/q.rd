@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-
+<!---------------->
+<!--Simple Table-->
+<!---------------->
 <resource schema="lmcextinct">
   <meta name="title">Extinction within the LMC</meta>
   <meta name="creationDate">2013-06-04T14:59:00Z</meta>

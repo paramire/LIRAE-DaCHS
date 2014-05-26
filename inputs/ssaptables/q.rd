@@ -32,7 +32,7 @@
     </sources>
       
     <!-- qnd: Hack para hacer fitsProdGrammar mas rapido-->
-    <fitsProdGrammar qnd="True">
+	<fitsProdGrammar qnd="True">
       <!-- Al utilizar productos es necesario //products#define, nos agrega ciertas culmanas a la tabla-->
       <rowfilter procDef="__system__/products#define">
         <bind key="table">"ssaptable.sst"</bind>

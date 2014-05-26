@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-
+<!--------------->
+<!--SIAP TABLES-->
+<!--------------->
 <resource schema="siaptables">
   <meta name="title">SIAP Tables</meta>
   <meta name="creationDate">2013-11-26T14:59:00Z</meta>
@@ -27,15 +29,8 @@
 	</table>
 
   <rowmaker id="build_st">
-  	<var name="imageTitle">
-  		"%s %s"%(@TELESCOP,@DATE_OBS) 
-  	</var>
-
   	<apply procDef="//siap#computePGS"/>
 		<apply procDef="//siap#setMeta">
-			<!-- Falta como completar info -->
-			<bind name="title">vars["imageTitle"]</bind>
-			<bind name="instrument">vars["TELESCOP"]</bind>
 	 </apply>
   </rowmaker>
 
@@ -47,13 +42,16 @@
 			
 		<!-- qnd: Hack para hacer fitsProdGrammar mas rapido-->
 		<fitsProdGrammar qnd="True">
+		
 			<!-- Al utilizar productos es necesario //products#define, nos agrega ciertas culmanas a la tabla-->
 			<rowfilter procDef="__system__/products#define">
 				<bind key="table">"siaptable.st"</bind>
 			</rowfilter>
 		</fitsProdGrammar>
+   	
    	<!--SERVICIO TAP-->
    	<register services="__system__/tap#run"/>
+
    	<!--Crea tabla en la DB -->
     <make table="st" rowmaker="build_st"/>
   </data>
