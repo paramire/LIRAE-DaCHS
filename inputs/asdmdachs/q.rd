@@ -100,7 +100,7 @@
 		<!--<column name="obs_creator_did" type="text"
 			utype="obscore:dataid.creatordid" ucd="meta.id"
 			description="Dataset identifier assigned by the creator."
-			verbLevel="15"/>
+			verbLevel="15"/>-->
 
 		<!--<column name="access_url" type="text"
 			utype="obscore:access.reference" ucd="meta.ref.url"
@@ -170,8 +170,8 @@
 			verbLevel="5">
 			<property name="std">1</property>
 		</column>
-			
-		<column name="sReg" type="spoly"
+		<!--TIENE QUE SER type="spoly"-->	
+		<column name="sReg" type="text"
 			description="Region covered by the observation, as a polygon"
 			utype="obscore:char.spatialaxis.coverage.support.area"
 			ucd="phys.angArea;obs"
@@ -213,8 +213,8 @@
 			verbLevel="10">
 			<property name="std">1</property>
 		</column>
-	 
-		<column name="tResolution" type="real" 
+	  <!--tiene que ser type="real"-->
+		<column name="tResolution" type="text" 
 			description="Minimal significant time interval along the time axis"
 			unit="s" utype="obscore:char.timeaxis.resolution.refval" ucd="time.resolution"
 			verbLevel="15">
@@ -308,13 +308,13 @@
 		  	<map key="obsId">@obsId</map>
 		  	<map dest="targetName">@targetName</map>
 		  	<map dest="sRa">float(@sRa)</map>
-		  	<map dest="sDec">float(@sDec</map>
+		  	<map dest="sDec">float(@sDec)</map>
 		  	<map dest="sFov">@sFov</map>
 		  	<map dest="sReg">@sReg</map>
 		  	<map dest="sRes">@sRes</map>
 		  	<map dest="tMin">long(@tMin)</map>
 		  	<map dest="tMax">long(@tMax)</map>
-		  	<map dest="tExptime">@tExptime</map>
+		  	<map dest="tExptime">long(@tExptime)</map>
 		  	<map dest="tResolution">@tResolution</map>
 		  	<map dest="emMin">float(@emMin)</map>
 		  	<map dest="emMax">float(@emMax)</map>
