@@ -67,39 +67,39 @@
 			description="Free-from title of the data set"
 			verbLevel="5"/>
 
-		<column name="obs_publisher_did" type="text"
+		<!--<column name="obs_publisher_did" type="text"
 			utype="obscore:curation.publisherdid" ucd="meta.ref.url;meta.curation"
 			description="Dataset identifier assigned by the publisher."
 			verbLevel="5">
 			<property name="std">1</property>
-		</column>
+		</column>-->
 
-		<column name="obs_creator_did" type="text"
+		<!--<column name="obs_creator_did" type="text"
 			utype="obscore:dataid.creatordid" ucd="meta.id"
 			description="Dataset identifier assigned by the creator."
-			verbLevel="15"/>
+			verbLevel="15"/>-->
 
-		<column name="access_url" type="text"
+		<!--<column name="access_url" type="text"
 			utype="obscore:access.reference" ucd="meta.ref.url"
 			description="The URL at which to obtain the data set."
 			verbLevel="1" displayHint="type=url">
 			<property name="std">1</property>
-		</column>
+		</column>-->
 
-		<column name="access_format" type="text"
+		<!--<column name="access_format" type="text"
 			description="MIME type of the resource at access_url"
 			utype="obscore:access.format" ucd="meta.code.mime"
 			verbLevel="5">
 			<property name="std">1</property>
-		</column>
+		</column>-->
 
-		<column name="access_estsize" type="bigint"
+		<!--<column name="access_estsize" type="bigint"
 			description="Estimated size of data product"
 			unit="kbyte" utype="obscore:access.size" ucd="phys.size;meta.file"
 			verbLevel="5">
 			<property name="std">1</property>
 			<values nullLiteral="-1"/>
-		</column>
+		</column>-->
 
 		<column name="targetName" type="text" 
 			description="Object a targeted observation targeted"
