@@ -55,7 +55,7 @@
 			<property name="std">1</property>
 		</column>
 
-		<column name="obs_id" type="text" 
+		<column name="obsId" type="text" 
 			utype="obscore:DataID.observationID" ucd="meta.id"
 			description="Unique identifier for an observation"
 			verbLevel="5">
@@ -262,7 +262,7 @@
 
 
 		<reGrammar topIgnoredLines="1">
-			<names> prodType, calibLevel, collecName, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName</names>
+			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName</names>
 		</reGrammar>
 
     <!--SERVICIO TAP-->
@@ -274,6 +274,7 @@
 		  	<map key="prodType">@prodType</map>
 		  	<map dest="calibLevel">@calibLevel</map>
 		  	<map dest="collecName">@collecName</map>
+		  	<map key="obsId">@obsId</map>
 		  	<map dest="targetName">@targetName</map>
 		  	<map dest="sRa">@sRa</map>
 		  	<map dest="sDec">@sDec</map>
