@@ -11,29 +11,6 @@
   <meta name="facility">ALMA</meta>
 
 <STREAM id="obscore-columns">
-		<mixin
-			calibLevel="calibLevel"
-			collectionName="collecName"
-			targetName="targetName"
-			ra="sRa"
-			dec="sDec"
-			fov="sFov"
-			coverage="sReg"
-			sResolution="sRes"
-			tMin="tMin"
-			tMax="tMax"
-			expTime="tExptime"
-			tResolution="tRes"
-			emMin="emMin"
-			emMax="emMax"
-			emResPower="emResPower"
-			oUCD="oUCD"
-			polStates="polStates"
-			facilityName="facilityName"
-			instrumentName="instName">
-			//obscore#publish
-		</mixin>
-
 		<column name="prodType" type="text"
 			utype="obscore:obs.dataproducttype" ucd="meta.id"
 			description="High level scientific classification of the data product,
@@ -314,7 +291,7 @@
 		  	<map dest="sRes">@sRes</map>
 		  	<map dest="tMin">long(@tMin)</map>
 		  	<map dest="tMax">long(@tMax)</map>
-		  	<map dest="tExptime">long(@tExptime)</map>
+		  	<map dest="tExptime">int(@tExptime)</map>
 		  	<map dest="tResolution">@tResolution</map>
 		  	<map dest="emMin">float(@emMin)</map>
 		  	<map dest="emMax">float(@emMax)</map>
