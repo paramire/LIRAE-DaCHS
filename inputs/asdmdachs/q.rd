@@ -148,7 +148,7 @@
 			<property name="std">1</property>
 		</column>
 		<!--TIENE QUE SER type="spoly"-->	
-		<column name="sReg" type="text"
+		<column name="roughCircle" type="spoly"
 			description="Region covered by the observation, as a polygon"
 			utype="obscore:char.spatialaxis.coverage.support.area"
 			ucd="phys.angArea;obs"
@@ -279,6 +279,19 @@
 		<!--Crea tabla en la DB -->
 		<make table="asdm">
 			<rowmaker id="build_asdm" >
+				<apply name="getApproximateCoverage">
+					<code>
+					# assume CRVAL1, CRVAL2 are approximate center and make a circle
+					# from it
+					vars["roughCircle"] = pgsphere.SCircle(
+						pgsphere.SPoint.fromDegrees(@sRa, @sDec),
+						1/60.*math.pi/180)
+					</code>
+				</apply>
+
+
+
+
 		  	<map key="prodType">@prodType</map>
 		  	<map dest="calibLevel">int(@calibLevel)</map>
 		  	<map dest="collecName">@collecName</map>
@@ -288,7 +301,8 @@
 		  	<map dest="sDec">float(@sDec)</map>
 		  	<map dest="sFov">@sFov</map>
 		  	<map dest="sReg">@sReg</map>
-		  	<map dest="sRes">@sRes</map>
+		  	<!--<map dest="sRes">@sRes.asPoly()</map>-->
+		  	<map dest="sRes">@roughCircle.asPoly()</map>
 		  	<map dest="tMin">long(@tMin)</map>
 		  	<map dest="tMax">long(@tMax)</map>
 		  	<map dest="tExptime">int(@tExptime)</map>
