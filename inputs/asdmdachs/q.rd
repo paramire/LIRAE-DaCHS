@@ -252,6 +252,27 @@
 			verbLevel="15">
 			<property name="std">1</property>
 		</column>
+
+		<column name="noise" type="real"
+			description="Noise"
+			ucd="meta.id;instr.det.noise"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
+
+		<column name="redshift" type="real"
+			description="Redshift"
+			utype="spect.DopplerVeloc"
+			ucd="src.redshift"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
+		<column name="fitsName" type="text"
+			description="Name of a fits associated to the data"
+			ucd="meta.id.assoc"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
 	</STREAM>
 
 	<table id="asdm" onDisk="True" adql="True">
@@ -270,7 +291,7 @@
 
 
 		<reGrammar>
-			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName</names>
+			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
 		</reGrammar>
 
     <!--SERVICIO TAP-->
@@ -314,6 +335,9 @@
 		  	<map dest="polStates">@polStates</map>
 		  	<map dest="facilityName">@facilityName</map>
 		  	<map dest="instName">@instName</map>
+		  	<map dest="noise">@noise</map>
+		  	<map dest="redshift">@redshift</map>
+		  	<map dest="fitsName">@fitsName</map>
 	  	</rowmaker>
 	  </make>
 
