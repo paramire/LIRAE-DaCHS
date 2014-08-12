@@ -148,7 +148,7 @@
 			<property name="std">1</property>
 		</column>
 		<!--TIENE QUE SER type="spoly"-->	
-		<column name="roughCircle" type="spoly"
+		<column name="sReg" type="spoly"
 			description="Region covered by the observation, as a polygon"
 			utype="obscore:char.spatialaxis.coverage.support.area"
 			ucd="phys.angArea;obs"
@@ -321,9 +321,9 @@
 		  	<map dest="sRa">float(@sRa)</map>
 		  	<map dest="sDec">float(@sDec)</map>
 		  	<map dest="sFov">@sFov</map>
-		  	<map dest="sReg">@sReg</map>
+		  	<map dest="sReg">@roughCircle.asPoly()</map>
 		  	<!--<map dest="sRes">@sRes.asPoly()</map>-->
-		  	<map dest="sRes">@roughCircle.asPoly()</map>
+		  	<map dest="sRes">@sRes</map>
 		  	<map dest="tMin">long(@tMin)</map>
 		  	<map dest="tMax">long(@tMax)</map>
 		  	<map dest="tExptime">int(@tExptime)</map>
