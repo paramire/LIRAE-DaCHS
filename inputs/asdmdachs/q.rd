@@ -131,7 +131,7 @@
 			<property name="std">1</property>
 		</column>
 
-		<!--<column name="sFov" type="double precision"
+		<!--<column name="sFov" type="text"
 			description="Approximate spatial extent for the region covered by the
 				observation"
 			unit="deg" ucd="phys.angSize;instr.fov"
@@ -305,7 +305,7 @@
 					# assume CRVAL1, CRVAL2 are approximate center and make a circle
 					# from it
 					vars["roughCircle"] = pgsphere.SCircle(
-						pgsphere.SPoint.fromDegrees(@sRa, @sDec),
+						pgsphere.SPoint.fromDegrees(float(@sRa), float(@sDec)),
 						1/60.*math.pi/180)
 					</code>
 				</apply>
@@ -324,9 +324,9 @@
 		  	<map dest="sReg">@roughCircle.asPoly()</map>
 		  	<!--<map dest="sRes">@sRes.asPoly()</map>-->
 		  	<map dest="sRes">@sRes</map>
-		  	<map dest="tMin">long(@tMin)</map>
-		  	<map dest="tMax">long(@tMax)</map>
-		  	<map dest="tExptime">int(@tExptime)</map>
+		  	<map dest="tMin">@tMin</map>
+		  	<map dest="tMax">@tMax</map>
+		  	<map dest="tExptime">@tExptime</map>
 		  	<map dest="tResolution">@tResolution</map>
 		  	<map dest="emMin">float(@emMin)</map>
 		  	<map dest="emMax">float(@emMax)</map>
