@@ -12,25 +12,25 @@
 
 	<table id="fits" onDisk="True" adql="True">
 		<mixin
-			calibLevel="calibLevel"
-			collectionName="collecName"
-			targetName="targetName"
-			ra="sRa"
-			dec="sDec"
-			fov="sFov"
-			coverage="sReg"
-			sResolution="sRes"
-			tMin="tMin"
-			tMax="tMax"
-			expTime="tExptime"
-			tResolution="tRes"
-			emMin="emMin"
-			emMax="emMax"
-			emResPower="emResPower"
-			oUCD="oUCD"
-			polStates="polStates"
-			facilityName="facilityName"
-			instrumentName="instName">
+			calibLevel="1"
+			collectionName="'ALMA'"
+			dec="s_dec"
+			ra="s_ra"
+			targetName="target_name"
+			emResPower=""
+			productType="'visibility'"
+			oUCD="'em.mm'"
+			facilityName="'ALMA'"
+			instrumentName="'ALMA'"
+
+			>
+			<!--
+				Falta
+				Coverage (s_region)
+				emMax
+				emMin
+
+			-->
 			//obscore#publish
 		</mixin>
 		<!--DESCRIPTION-->
@@ -40,18 +40,9 @@
 	</table>
 
   <rowmaker id="build_fits">
-  	<var name="imageTitle">
-  		"%s %s"%(@TELESCOP,@DATE_OBS) 
-  	</var>
-  	
-  	<apply procDef="//siap#computePGS"/>
-		<apply procDef="//siap#setMeta">
-			<bind name="title">vars["imageTitle"]</bind>
-			<bind name="instrument">vars["TELESCOP"]</bind>
-		</apply>
-		
-		<map dest="centerDelta">@OBSDEC</map>
-		<map dest="centerAlpha">@OBSRA</map>
+  	<map dest="target_name">@OBJECT</map>
+		<map dest="s_dec">@CRVAL1</map>
+		<map dest="s_ra">@CRVAL2</map>
   </rowmaker>
 
 	<data id="import_content">
