@@ -10,7 +10,7 @@
   <meta name="subject">ASM</meta>
   <meta name="facility">ALMA</meta>
 
-<STREAM id="obscore-columns">
+	<STREAM id="obscore-columns">
 		<column name="prodType" type="text"
 			utype="obscore:obs.dataproducttype" ucd="meta.id"
 			description="High level scientific classification of the data product,
@@ -27,11 +27,6 @@
 			</values>
 			<property name="std">1</property>
 		</column>
-
-		<!--<column name="dataproduct_subtype" type="text"
-			utype="obscore:obs.dataproductsubtype" ucd="meta.id"
-			description="Data product specific type"
-			verbLevel="15"/>-->
 	
 		<column name="calibLevel" type="smallint" required="True"
 			utype="obscore:obs.caliblevel" ucd="meta.code;obs.calib"
@@ -62,58 +57,12 @@
 			<property name="std">1</property>
 		</column>
 
-		<!--<column name="obs_title" type="text"
-			utype="obscore:dataid.title" ucd="meta.title;obs"
-			description="Free-from title of the data set"
-			verbLevel="5"/>-->
-
-		<!--<column name="obs_publisher_did" type="text"
-			utype="obscore:curation.publisherdid" ucd="meta.ref.url;meta.curation"
-			description="Dataset identifier assigned by the publisher."
-			verbLevel="5">
-			<property name="std">1</property>
-		</column>-->
-
-		<!--<column name="obs_creator_did" type="text"
-			utype="obscore:dataid.creatordid" ucd="meta.id"
-			description="Dataset identifier assigned by the creator."
-			verbLevel="15"/>-->
-
-		<!--<column name="access_url" type="text"
-			utype="obscore:access.reference" ucd="meta.ref.url"
-			description="The URL at which to obtain the data set."
-			verbLevel="1" displayHint="type=url">
-			<property name="std">1</property>
-		</column>-->
-
-		<!--<column name="access_format" type="text"
-			description="MIME type of the resource at access_url"
-			utype="obscore:access.format" ucd="meta.code.mime"
-			verbLevel="5">
-			<property name="std">1</property>
-		</column>-->
-
-		<!--<column name="access_estsize" type="bigint"
-			description="Estimated size of data product"
-			unit="kbyte" utype="obscore:access.size" ucd="phys.size;meta.file"
-			verbLevel="5">
-			<property name="std">1</property>
-			<values nullLiteral="-1"/>
-		</column>-->
-
 		<column name="targetName" type="text" 
 			description="Object a targeted observation targeted"
 			utype="obscore:target.name" ucd="meta.id;src"
 			verbLevel="15">
 			<property name="std">1</property>
 		</column>
-
-		<!--<column name="target_class" type="text" 
-			description="Class of the target object (star, QSO, ...)"
-			utype="obscore:target.class" ucd="src.class"
-			verbLevel="20">
-			<property name="std">1</property>
-		</column>-->
 
 		<column name="sRa" type="double precision"
 			description="RA of (center of) observation, ICRS"
@@ -131,14 +80,6 @@
 			<property name="std">1</property>
 		</column>
 
-		<!--<column name="sFov" type="text"
-			description="Approximate spatial extent for the region covered by the
-				observation"
-			unit="deg" ucd="phys.angSize;instr.fov"
-			utype="obscore:char.spatialaxis.coverage.bounds.extent.diameter"
-			verbLevel="5">
-			<property name="std">1</property>
-		</column>-->
 		<column name="sFov" type="text"
 			description="Approximate spatial extent for the region covered by the
 				observation"
@@ -275,27 +216,46 @@
 		</column>
 	</STREAM>
 
-	<table id="asdm" onDisk="True" adql="True">
+	<table id="asdm" onDisk="True" adql="True" primary="obsId">
 
 		<!--DESCRIPTION-->
-		<meta name="description">
-		  ASDM+OBSCORE
-		</meta>
+		<meta name="description">ASDM+OBSCORE</meta>
 		<FEED source="obscore-columns"/>
 	</table>
 
+	<table id="asdm_uid" onDisk="True" adql="False" primary="obsId">
+		<meta name="description">ASDM UID+PROJECT</meta>
+		<columns name="uid" type="text" ucd="meta.id"
+			utype="obscore:DataID.observationID"
+			description="Unique identifier for an observation"
+			verbLevel="5">
+			<property name="std">1</property>
+		</columns>
+		<column name="sFov" type="text"
+			description="Approximate spatial extent for the region covered by the
+				observation"
+			unit="deg" ucd="phys.angSize;instr.fov"
+			utype="obscore:char.spatialaxis.coverage.bounds.extent.diameter"
+			verbLevel="5">
+			<property name="std">1</property>
+		</column>
+		<column name="emResPower" type="double precision"
+			description="Spectral resolving power delta lambda/lamda"
+			utype="obscore:char.spectralaxis.resolution.resolpower.refval"
+			ucd="spect.resolution"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
+	<table>
 
-	<data id="import_content">
+
+	<data id="import_content_obs_1">
 		<!--RECURSOS FITs-->
 		<sources pattern="res/*.csv"></sources>
-
-
+		<!--ELEMENTOS GRAMMAR-->
 		<reGrammar>
 			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
 		</reGrammar>
-
-    <!--SERVICIO TAP-->
-    <register services="__system__/tap#run"/>
 
 		<!--Crea tabla en la DB -->
 		<make table="asdm">
@@ -309,9 +269,6 @@
 						1/60.*math.pi/180)
 					</code>
 				</apply>
-
-
-
 
 		  	<map key="prodType">@prodType</map>
 		  	<map dest="calibLevel">int(@calibLevel)</map>
@@ -340,6 +297,19 @@
 		  	<map dest="fitsName">@fitsName</map>
 	  	</rowmaker>
 	  </make>
+  </data>
 
+  <data id="import_content_obs_2">
+  	<sources pattern="res/harv/*.csv"/>
+  	<reGrammar>
+  		<names>obsId, sFov, emResPower</names>
+  	</reGrammar>
+  	<make table="asdm_uid">
+  		<rowmaker id="build_har">
+  			<map dest="obsId">@obsId</map>
+  			<map dest="sFov">@sFov</map>
+  			<map dest="emResPower">@emResPower</map>
+  		</rowmaker>
+  	</make>
   </data>
 </resource>
