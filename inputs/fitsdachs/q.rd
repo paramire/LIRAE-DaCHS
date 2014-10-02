@@ -21,16 +21,7 @@
 			productType="'visibility'"
 			oUCD="'em.mm'"
 			facilityName="'ALMA'"
-			instrumentName="'ALMA'"
-
-			>
-			<!--
-				Falta
-				Coverage (s_region)
-				emMax
-				emMin
-
-			-->
+			instrumentName="'ALMA'"	>
 			//obscore#publish
 		</mixin>
 		<!--DESCRIPTION-->

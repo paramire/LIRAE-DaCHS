@@ -216,7 +216,7 @@
 		</column>
 	</STREAM>
 
-	<table id="asdm" onDisk="True" adql="True" primary="obsId">
+	<table id="asdm" onDisk="True" adql="True" primary="obsId" dupePolicy="overwrite">
 
 		<!--DESCRIPTION-->
 		<meta name="description">ASDM+OBSCORE</meta>
@@ -246,12 +246,19 @@
 			verbLevel="15">
 			<property name="std">1</property>
 		</column>
-	<table>
 
+
+		<viewStatement>
+			CREATE VIEW \\curtable (\\colNames)
+			AS (SELECT \\colNames
+			    FROM \\schema.asdm
+			    NATURAL JOIN \\schema.asdm_uid)
+		</viewStatement>
+	<table>
 
 	<data id="import_content_obs_1">
 		<!--RECURSOS FITs-->
-		<sources pattern="res/*.csv"></sources>
+		<sources pattern="res/asdm/*.csv"></sources>
 		<!--ELEMENTOS GRAMMAR-->
 		<reGrammar>
 			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
