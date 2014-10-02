@@ -331,3 +331,81 @@ gavo.utils.excs.Error: At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource e
 2013-08-11 16:34:36,363 [INFO 5896] Sending to postgres: SELECT A_V FROM lmcextinct.exts WHERE A_V > 0.09 LIMIT 2000
 2013-08-11 17:23:53,545 [WARNING 5896] Waking up after 43199.999984 seconds
 2014-04-22 18:20:25,785 [WARNING 6577] Removed stale PID file.
+2014-05-11 11:21:56,915 [WARNING 24311] Removed stale PID file.
+2014-06-07 01:25:22,086 [WARNING 5567] Waking up after 4319.99999213 seconds
+2014-06-07 02:37:22,124 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-07 14:37:22,125 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-08 02:37:22,126 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-08 14:37:22,127 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-09 02:37:22,128 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-09 14:37:22,129 [WARNING 5567] Waking up after 43199.999995 seconds
+2014-06-10 02:37:22,129 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-10 14:37:22,130 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-11 02:37:22,132 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-11 14:37:22,133 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-12 02:37:22,133 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-12 14:37:22,134 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-13 02:37:22,134 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-13 14:37:22,135 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-14 02:37:22,136 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-14 14:37:22,137 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-15 02:37:22,138 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-15 14:37:22,140 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-16 02:37:22,142 [WARNING 5567] Waking up after 43199.999995 seconds
+2014-06-16 14:37:22,142 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-17 02:37:22,144 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-17 14:37:22,173 [WARNING 5567] Waking up after 43199.9999871 seconds
+2014-06-18 02:37:22,193 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-18 14:37:22,211 [WARNING 5567] Waking up after 43199.9999921 seconds
+2014-06-19 02:37:22,249 [WARNING 5567] Waking up after 43199.9999189 seconds
+2014-06-19 14:37:22,272 [WARNING 5567] Waking up after 43199.9999919 seconds
+2014-06-20 02:37:22,303 [WARNING 5567] Waking up after 43199.999928 seconds
+2014-06-20 14:37:22,320 [WARNING 5567] Waking up after 43199.99999 seconds
+2014-06-21 02:37:22,345 [WARNING 5567] Waking up after 43199.9999919 seconds
+2014-06-21 14:37:22,367 [WARNING 5567] Waking up after 43199.9999869 seconds
+2014-06-22 02:37:22,380 [WARNING 5567] Waking up after 43199.9999928 seconds
+2014-06-22 14:37:22,414 [WARNING 5567] Waking up after 43199.999666 seconds
+2014-06-23 02:37:22,417 [WARNING 5567] Waking up after 43199.9999909 seconds
+2014-06-23 14:37:22,418 [WARNING 5567] Waking up after 43199.9999938 seconds
+2014-06-23 21:59:48,658 [INFO 5567] taprunner executing SELECT TOP 1 * FROM ivoa.emptyobscore
+2014-06-23 21:59:48,686 [INFO 5567] Sending to postgres: SELECT * FROM ivoa.emptyobscore LIMIT 1
+2014-06-23 21:59:50,791 [INFO 9889] taprunner executing SELECT TOP 1 * FROM ivoa.emptyobscore
+2014-06-23 21:59:50,907 [INFO 9889] Sending to postgres: SELECT * FROM ivoa.emptyobscore LIMIT 1
+2014-06-23 21:59:50,973 [INFO 9889] taprunner for nKs10f finished
+2014-06-23 22:00:00,584 [INFO 5567] taprunner executing SELECT TOP 1 * FROM ivoa.emptyobscore NATURAL JOIN TAP_UPLOAD.taphandlesample 
+2014-06-23 22:00:00,598 [INFO 5567] Sending to postgres: SELECT * FROM ivoa.emptyobscore NATURAL JOIN taphandlesample  LIMIT 1
+2014-06-23 22:00:02,563 [INFO 9906] taprunner executing SELECT keys.from_table, keys.target_table, from_column, target_column FROM TAP_SCHEMA.keys as keys JOIN TAP_SCHEMA.key_columns AS key_columns ON keys.key_id = key_columns.key_id
+2014-06-23 22:00:02,617 [INFO 9906] Sending to postgres: SELECT keys.from_table, keys.target_table, from_column, target_column FROM TAP_SCHEMA.keys AS keys JOIN TAP_SCHEMA.key_columns AS key_columns ON keys.key_id = key_columns.key_id LIMIT 2000
+2014-06-23 22:00:02,712 [INFO 9906] taprunner for CFLKVX finished
+2014-06-24 02:37:22,419 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-24 14:37:22,420 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-25 02:37:22,422 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-25 14:37:22,423 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-26 02:37:22,431 [WARNING 5567] Waking up after 43199.9999909 seconds
+2014-06-26 14:37:22,431 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-27 02:37:22,432 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-27 14:37:22,433 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-28 02:37:22,434 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-28 14:37:22,435 [WARNING 5567] Waking up after 43199.9999928 seconds
+2014-06-29 02:37:22,435 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-29 14:37:22,437 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-06-30 02:37:22,438 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-06-30 14:37:22,439 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-07-01 02:37:22,439 [WARNING 5567] Waking up after 43199.9999928 seconds
+2014-07-01 14:37:22,440 [WARNING 5567] Waking up after 43199.9999938 seconds
+2014-07-02 02:37:22,441 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-07-02 14:37:22,442 [WARNING 5567] Waking up after 43199.9999938 seconds
+2014-07-03 02:37:22,443 [WARNING 5567] Waking up after 43199.9999931 seconds
+2014-07-03 14:37:22,445 [WARNING 5567] Waking up after 43199.9999928 seconds
+2014-07-04 02:37:22,446 [WARNING 5567] Waking up after 43199.999994 seconds
+2014-07-04 14:37:22,447 [WARNING 5567] Waking up after 43199.9999921 seconds
+2014-07-05 02:37:22,472 [WARNING 5567] Waking up after 43199.9999919 seconds
+2014-07-05 14:37:22,485 [WARNING 5567] Waking up after 43199.9999902 seconds
+2014-07-06 02:37:22,505 [WARNING 5567] Waking up after 43199.9999919 seconds
+2014-07-06 14:37:22,519 [WARNING 5567] Waking up after 43199.9999921 seconds
+2014-07-07 02:37:22,521 [WARNING 5567] Waking up after 43199.9999909 seconds
+2014-07-07 14:37:22,538 [WARNING 5567] Waking up after 43199.9999831 seconds
+2014-10-02 09:50:11,898 [WARNING 16902] RD Viejos/learning/q: resource directory '/home/gavo/LIRAE/LIRAE-DaCHS/inputs/learning' does not exist
+2014-10-02 09:50:12,829 [WARNING 16937] No running DaCHS server found.
+2014-10-02 09:54:55,823 [INFO 17060] Making data import_content_obs_1
+2014-10-02 09:54:55,908 [INFO 17060] Rows affected: 92

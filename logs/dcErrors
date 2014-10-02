@@ -253,3 +253,555 @@ Traceback (most recent call last):
 StructureError: At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource elements have no publish attributes or children.
 2013-08-11 16:11:55,146 [ERROR 5896] At /data/gavo/inputs/lmcextinct/q.rd, (58, 1): resource elements have no publish attributes or children. (see info for traceback)
 None
+2014-05-11 11:56:42,836 [ERROR 24471] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 244, in start
+    open(os.path.join(base.getConfig("logDir"), "server.stderr"), "a"),
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/server.stderr'
+2014-05-11 12:51:57,801 [ERROR 25894] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 289, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-11 12:53:12,316 [ERROR 25935] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 289, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-11 12:53:59,734 [ERROR 25952] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-11 12:55:27,262 [ERROR 25964] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 289, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-11 12:57:15,198 [ERROR 26043] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 289, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-12 17:04:08,865 [ERROR 30357] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 289, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-26 16:14:44,272 [ERROR 2066] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-26 16:30:46,271 [ERROR 2084] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-05-29 03:59:21,066 [ERROR 2081] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-02 17:51:13,232 [ERROR 2033] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-03 02:28:00,132 [ERROR 2033] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-04 12:20:40,204 [ERROR 2029] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-04 12:51:00,272 [ERROR 2034] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-04 15:56:16,173 [ERROR 2036] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-05 17:33:04,179 [ERROR 2062] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-05 17:53:26,249 [ERROR 2064] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-05 23:05:09,165 [ERROR 2091] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-06 14:42:21,457 [ERROR 5539] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-06-06 14:48:35,886 [ERROR 5557] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-07-07 22:12:04,627 [ERROR 10066] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 289, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-09-14 22:02:20,337 [ERROR 2097] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-09-14 22:13:54,792 [ERROR 2166] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 323, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 245, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 161, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 224, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 169, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-10-02 09:50:12,840 [ERROR 16940] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 342, in main
+    args.subAction(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 307, in restart
+    start(args)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 261, in start
+    _startServer)
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 159, in daemonize
+    callable()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 234, in _startServer
+    root.site.webLog = _configureTwistedLog()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/serve.py", line 167, in _configureTwistedLog
+    theLog = logfile.LogFile("web.log", base.getConfig("logDir"))
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 161, in __init__
+    BaseLogFile.__init__(self, name, directory, defaultMode)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 40, in __init__
+    self._openFile()
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 166, in _openFile
+    BaseLogFile._openFile(self)
+  File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
+    self._file = file(self.path, "r+", 1)
+IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'

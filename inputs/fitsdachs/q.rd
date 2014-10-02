@@ -28,6 +28,13 @@
 		<meta name="description">
 		  ASDM+OBSCORE
 		</meta>
+		<column name="targetName" type="text" 
+			description="Object a targeted observation targeted"
+			utype="obscore:target.name" ucd="meta.id;src"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
+
 	</table>
 
   <rowmaker id="build_fits">
