@@ -40,7 +40,7 @@
 		<sources recurse="True" pattern="res/*.fits"/>
 		<fitsProdGrammar qnd="True">
 			<rowfilter procDef="__system__/products#define">
-				<bind key="table"></bind>
+				<bind key="table">fitsdachs.fits</bind>
 			</rowfilter>
 		</fitsProdGrammar>
 

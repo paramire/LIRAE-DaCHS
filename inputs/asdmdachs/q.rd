@@ -89,7 +89,7 @@
 			<property name="std">1</property>
 		</column>
 		<!--TIENE QUE SER type="spoly"-->	
-		<column name="sReg" type="spoly"
+		<column name="sReg" type="real"
 			description="Region covered by the observation, as a polygon"
 			utype="obscore:char.spatialaxis.coverage.support.area"
 			ucd="phys.angArea;obs"
@@ -216,45 +216,11 @@
 		</column>
 	</STREAM>
 
-	<table id="asdm" onDisk="True" adql="True" primary="obsId" dupePolicy="overwrite">
-
+	<table id="asdm" onDisk="True" adql="True">
 		<!--DESCRIPTION-->
 		<meta name="description">ASDM+OBSCORE</meta>
 		<FEED source="obscore-columns"/>
 	</table>
-
-	<table id="asdm_uid" onDisk="True" adql="False" primary="obsId">
-		<meta name="description">ASDM UID+PROJECT</meta>
-		<columns name="uid" type="text" ucd="meta.id"
-			utype="obscore:DataID.observationID"
-			description="Unique identifier for an observation"
-			verbLevel="5">
-			<property name="std">1</property>
-		</columns>
-		<column name="sFov" type="text"
-			description="Approximate spatial extent for the region covered by the
-				observation"
-			unit="deg" ucd="phys.angSize;instr.fov"
-			utype="obscore:char.spatialaxis.coverage.bounds.extent.diameter"
-			verbLevel="5">
-			<property name="std">1</property>
-		</column>
-		<column name="emResPower" type="double precision"
-			description="Spectral resolving power delta lambda/lamda"
-			utype="obscore:char.spectralaxis.resolution.resolpower.refval"
-			ucd="spect.resolution"
-			verbLevel="15">
-			<property name="std">1</property>
-		</column>
-
-
-		<viewStatement>
-			CREATE VIEW \\curtable (\\colNames)
-			AS (SELECT \\colNames
-			    FROM \\schema.asdm
-			    NATURAL JOIN \\schema.asdm_uid)
-		</viewStatement>
-	<table>
 
 	<data id="import_content_obs_1">
 		<!--RECURSOS FITs-->
@@ -271,9 +237,7 @@
 					<code>
 					# assume CRVAL1, CRVAL2 are approximate center and make a circle
 					# from it
-					vars["roughCircle"] = pgsphere.SCircle(
-						pgsphere.SPoint.fromDegrees(float(@sRa), float(@sDec)),
-						1/60.*math.pi/180)
+					vars["roughCircle"] = 0
 					</code>
 				</apply>
 
@@ -285,8 +249,8 @@
 		  	<map dest="sRa">float(@sRa)</map>
 		  	<map dest="sDec">float(@sDec)</map>
 		  	<map dest="sFov">@sFov</map>
-		  	<map dest="sReg">@roughCircle.asPoly()</map>
-		  	<!--<map dest="sRes">@sRes.asPoly()</map>-->
+		  	<map dest="sReg">@roughCircle</map>
+		  	<!--<map dest="sReg">@sRes.asPoly()</map>-->
 		  	<map dest="sRes">@sRes</map>
 		  	<map dest="tMin">@tMin</map>
 		  	<map dest="tMax">@tMax</map>
@@ -304,19 +268,5 @@
 		  	<map dest="fitsName">@fitsName</map>
 	  	</rowmaker>
 	  </make>
-  </data>
-
-  <data id="import_content_obs_2">
-  	<sources pattern="res/harv/*.csv"/>
-  	<reGrammar>
-  		<names>obsId, sFov, emResPower</names>
-  	</reGrammar>
-  	<make table="asdm_uid">
-  		<rowmaker id="build_har">
-  			<map dest="obsId">@obsId</map>
-  			<map dest="sFov">@sFov</map>
-  			<map dest="emResPower">@emResPower</map>
-  		</rowmaker>
-  	</make>
   </data>
 </resource>
