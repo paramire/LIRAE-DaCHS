@@ -216,7 +216,7 @@
 		</column>
 	</STREAM>
 
-	<table id="asdm" onDisk="True" adql="True" primary="obsId">
+	<table id="asdm" onDisk="True" adql="True">
 
 		<!--DESCRIPTION-->
 		<meta name="description">ASDM+OBSCORE</meta>
