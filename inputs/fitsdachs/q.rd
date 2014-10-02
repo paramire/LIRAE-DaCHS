@@ -28,6 +28,24 @@
 		<meta name="description">
 		  ASDM+OBSCORE
 		</meta>
+
+		<column name="target_name" type="text" 
+			description="Object a targeted observation targeted"
+			utype="obscore:target.name" ucd="meta.id;src"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
+
+		<column name="s_ra"
+		  ucd="pos.eq.ra;meta.main"
+		  tablehead="RA"
+		  description="Area center RA ICRS"
+		  verbLevel="10"/>
+		<column name="s_dec"
+		  ucd="pos.eq.dec;meta.main"
+		  tablehead="Dec"
+		  description="Area center Declination ICRS"
+		  verbLevel="10"/>
 	</table>
 
   <rowmaker id="build_fits">
