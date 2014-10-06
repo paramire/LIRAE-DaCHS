@@ -805,3 +805,447 @@ Traceback (most recent call last):
   File "/usr/lib/python2.7/dist-packages/twisted/python/logfile.py", line 64, in _openFile
     self._file = file(self.path, "r+", 1)
 IOError: [Errno 13] Permission denied: u'/home/gavo/LIRAE/LIRAE-DaCHS/logs/web.log'
+2014-10-02 10:09:58,736 [ERROR 17447] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: syntax error at or near "AS"
+LINE 56:       CAST( AS double precision) AS em_res_power,
+                     ^
+
+2014-10-02 10:11:18,732 [ERROR 17454] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: syntax error at or near "AS"
+LINE 56:       CAST( AS double precision) AS em_res_power,
+                     ^
+
+2014-10-02 10:12:11,592 [ERROR 17458] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:15:28,302 [ERROR 17471] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:17:39,929 [ERROR 17483] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:19:43,251 [ERROR 17541] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:31:49,891 [ERROR 17617] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:33:04,043 [ERROR 17621] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:35:16,803 [ERROR 17629] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:37:56,534 [ERROR 17636] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:57:17,453 [ERROR 17751] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+
+2014-10-02 10:57:54,000 [ERROR 17754] Uncaught exception at toplevel
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/gavo/user/cli.py", line 158, in main
+    funcToRun()
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 153, in main
+    sys.exit(process(opts, args))
+  File "/usr/lib/python2.7/dist-packages/gavo/user/importing.py", line 79, in process
+    rsc.makeDependentsFor(dds, opts, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 498, in makeDependentsFor
+    makeData(dd, parseOptions=parseOptions, connection=connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 451, in makeData
+    processSource(res, forceSource, feeder, parseOptions, connection)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 177, in __exit__
+    self._exitSuccess()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/data.py", line 161, in _exitSuccess
+    feeder.__exit__(None, None, None)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 105, in __exit__
+    table._Feeder.__exit__(self, *args)
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 91, in __exit__
+    self.table.importFinished()
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 657, in importFinished
+    self.runScripts("postCreation")
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/table.py", line 196, in runScripts
+    self._runScripts(self, phase, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 252, in runScripts
+    runner.run(table, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/gavo/rscdef/scripting.py", line 178, in run
+    func(dbTable, **kwargs)
+  File "<string>", line 11, in scriptFun
+  File "/usr/lib/python2.7/dist-packages/gavo/rsc/dbtable.py", line 543, in query
+    return DBMethodsMixin.query(self, query, data)
+  File "/usr/lib/python2.7/dist-packages/gavo/base/sqlsupport.py", line 735, in query
+    cursor.execute(query, data)
+ProgrammingError: column "accref" does not exist
+LINE 36:       CAST(accref AS text) AS obs_id,
+                    ^
+

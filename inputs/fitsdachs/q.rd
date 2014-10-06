@@ -17,37 +17,49 @@
 			dec="s_dec"
 			ra="s_ra"
 			targetName="target_name"
-			emResPower=""
 			productType="'visibility'"
 			oUCD="'em.mm'"
 			facilityName="'ALMA'"
 			instrumentName="'ALMA'"	>
-			//obscore#publish
+			//obscore#publishSIAP
 		</mixin>
 		<!--DESCRIPTION-->
 		<meta name="description">
 		  ASDM+OBSCORE
 		</meta>
-		<column name="targetName" type="text" 
+		<column name="target_name" type="text" 
 			description="Object a targeted observation targeted"
 			utype="obscore:target.name" ucd="meta.id;src"
 			verbLevel="15">
 			<property name="std">1</property>
 		</column>
 
+		<column name="s_ra"
+		  ucd="pos.eq.ra;meta.main"
+		  tablehead="RA"
+		  description="Area center RA ICRS"
+		  verbLevel="10"/>
+		<column name="s_dec"
+		  ucd="pos.eq.dec;meta.main"
+		  tablehead="Dec"
+		  description="Area center Declination ICRS"
+		  verbLevel="10"/>
 	</table>
 
   <rowmaker id="build_fits">
+  	<apply procDef="//siap#computePGS"/>
+	<apply procDef="//siap#setMeta">
+	</apply>
   	<map dest="target_name">@OBJECT</map>
-		<map dest="s_dec">@CRVAL1</map>
-		<map dest="s_ra">@CRVAL2</map>
+	<map dest="s_dec">@CRVAL1</map>
+	<map dest="s_ra">@CRVAL2</map>
   </rowmaker>
 
 	<data id="import_content">
 		<sources recurse="True" pattern="res/*.fits"/>
 		<fitsProdGrammar qnd="True">
 			<rowfilter procDef="__system__/products#define">
-				<bind key="table">fitsdachs.fits</bind>
+				<bind key="table">"fitsdachs.fits"</bind>
 			</rowfilter>
 		</fitsProdGrammar>
 
