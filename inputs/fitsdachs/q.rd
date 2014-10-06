@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+FITS</meta>
   <meta name="creationDate">2014-08-12T18:01:00Z</meta>
   <meta name="description" format="plain">
-    ObsCore + FITS
+    ObsCore + FITS v.1.1
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>

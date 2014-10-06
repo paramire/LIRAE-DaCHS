@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+ASDM</meta>
   <meta name="creationDate">2014-05-23T14:51:00Z</meta>
   <meta name="description" format="plain">
-    ASDM 
+    ASDM-CSV v.1.1
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
