@@ -17,12 +17,14 @@
 			dec="s_dec"
 			ra="s_ra"
 			targetName="target_name"
-			emResPower=""
 			productType="'visibility'"
 			oUCD="'em.mm'"
 			facilityName="'ALMA'"
 			instrumentName="'ALMA'"	>
 			//obscore#publish
+		</mixin>
+		<mixin>
+			//siap#pgs
 		</mixin>
 		<!--DESCRIPTION-->
 		<meta name="description">
@@ -35,7 +37,6 @@
 			verbLevel="15">
 			<property name="std">1</property>
 		</column>
-
 		<column name="s_ra"
 		  ucd="pos.eq.ra;meta.main"
 		  tablehead="RA"
@@ -52,6 +53,9 @@
   	<map dest="target_name">@OBJECT</map>
 		<map dest="s_dec">@CRVAL1</map>
 		<map dest="s_ra">@CRVAL2</map>
+		<apply procDef="//siap#computePGS"/>
+		<apply procDef="//siap#setMeta">
+		</apply>
   </rowmaker>
 
 	<data id="import_content">
@@ -65,4 +69,15 @@
 		<register services="__system__/tap#run"/>
 		<make table="fits" rowmaker="build_fits"/>
 	</data>
+
+	<service id="fitsdachs" allowed="form,siap.xml">
+    <meta name="shortName">SIAP CHIVO DaCHS</meta>
+    <meta name="title">"Sample image access"</meta>
+  	<publish render="siap.xml" sets="local"/>
+ 		<publish render="form" sets="local" />
+		<dbCore id="query_images" queriedTable="fits">
+		  <condDesc original="//siap#protoInput"/>
+		  <condDesc original="//siap#humanInput"/>
+		</dbCore>
+ 	</service>
 </resource>
