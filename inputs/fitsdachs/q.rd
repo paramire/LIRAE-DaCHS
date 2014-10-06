@@ -21,7 +21,7 @@
 			oUCD="'em.mm'"
 			facilityName="'ALMA'"
 			instrumentName="'ALMA'"	>
-			//obscore#publish
+			//obscore#publishSIAP
 		</mixin>
 		<mixin>
 			//siap#pgs
@@ -30,7 +30,6 @@
 		<meta name="description">
 		  ASDM+OBSCORE
 		</meta>
-
 		<column name="target_name" type="text" 
 			description="Object a targeted observation targeted"
 			utype="obscore:target.name" ucd="meta.id;src"
@@ -50,6 +49,9 @@
 	</table>
 
   <rowmaker id="build_fits">
+  	<apply procDef="//siap#computePGS"/>
+	<apply procDef="//siap#setMeta">
+	</apply>
   	<map dest="target_name">@OBJECT</map>
 		<map dest="s_dec">@CRVAL1</map>
 		<map dest="s_ra">@CRVAL2</map>
@@ -62,7 +64,7 @@
 		<sources recurse="True" pattern="res/*.fits"/>
 		<fitsProdGrammar qnd="True">
 			<rowfilter procDef="__system__/products#define">
-				<bind key="table">fitsdachs.fits</bind>
+				<bind key="table">"fitsdachs.fits"</bind>
 			</rowfilter>
 		</fitsProdGrammar>
 
