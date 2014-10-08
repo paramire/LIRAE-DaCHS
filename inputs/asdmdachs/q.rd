@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+ASDM</meta>
   <meta name="creationDate">2014-05-23T14:51:00Z</meta>
   <meta name="description" format="plain">
-    ASDM 
+    ASDM-CSV v.1.2
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
@@ -216,14 +216,13 @@
 		</column>
 	</STREAM>
 
-	<table id="asdm" onDisk="True" adql="True" primary="obsId">
-
+	<table id="asdm" onDisk="True" adql="True">
 		<!--DESCRIPTION-->
 		<meta name="description">ASDM+OBSCORE</meta>
 		<FEED source="obscore-columns"/>
 	</table>
 
-	<table id="asdm_uid" onDisk="True" adql="False" primary="obsId">
+	<table id="asdm_uid" onDisk="True" adql="True">
 	    <meta name="description">ASDM UID+PROJECT</meta>
 	    <columns name="uid" type="text" ucd="meta.id"
 	      utype="obscore:DataID.observationID"
@@ -250,7 +249,7 @@
 
 	<data id="import_content_obs_1">
 		<!--RECURSOS FITs-->
-		<sources pattern="res/*.csv"></sources>
+		<sources pattern="res/asdm/*.csv"></sources>
 		<!--ELEMENTOS GRAMMAR-->
 		<reGrammar>
 			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
@@ -266,7 +265,6 @@
 					vars["roughCircle"] = 0
 					</code>
 				</apply>
-
 			  	<map key="prodType">@prodType</map>
 			  	<map dest="calibLevel">int(@calibLevel)</map>
 			  	<map dest="collecName">@collecName</map>
@@ -296,17 +294,18 @@
 	 	</make>
  	</data>
 
-  	<data id="import_content_obs_2">
-  		<sources pattern="res/harv/*.csv"/>
-	  	<reGrammar>
-	  		<names>obsId, sFov, emResPower</names>
-	  	</reGrammar>
-	  	<make table="asdm_uid">
-	  		<rowmaker id="build_har">
-	  			<map dest="obsId">@obsId</map>
-	  			<map dest="sFov">@sFov</map>
-	  			<map dest="emResPower">@emResPower</map>
-	  		</rowmaker>
-	  	</make>
-  	</data>
+	<data id="import_content_obs_2">
+		<sources pattern="res/harv/*.csv"/>
+  	<reGrammar>
+  		<names>obsId, sFov, emResPower</names>
+  	</reGrammar>
+  	<make table="asdm_har">
+  		<rowmaker id="build_har">
+  			<map dest="obsId">@obsId</map>
+  			<map dest="sFov">@sFov</map>
+  			<map dest="emResPower">@emResPower</map>
+  		</rowmaker>
+  	</make>
+	</data>
 </resource>
+
