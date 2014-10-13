@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+ASDM</meta>
   <meta name="creationDate">2014-05-23T14:51:00Z</meta>
   <meta name="description" format="plain">
-    ASDM-CSV v.1.2
+    ASDM-CSV v.1.3
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
@@ -235,6 +235,11 @@
 	      description="Project Code"
 	      verbLevel="10">
 	    </columns>
+	    <columns name="dateObs" type="text"
+	      ucd="meta.time"
+	      description="Observation Date"
+	      verbLevel="10">
+	    </columns>
 	    <!--<column name="sFov" type="text"
 	      description="Approximate spatial extent for the region covered by the
 	        observation"
@@ -301,7 +306,7 @@
 
 	<data id="import_content_obs_2">
 		<sources pattern="res/harv/*.csv"></sources>
-  	<reGrammar topIgnoredLines="1" recordSep=",">
+  	<reGrammar topIgnoredLines="1" fieldSep=",">
   		<names>obsId, projectCode, dateObs</names>
   	</reGrammar>
   	<make table="asdm_uid">
