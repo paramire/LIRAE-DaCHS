@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+ASDM</meta>
   <meta name="creationDate">2014-05-23T14:51:00Z</meta>
   <meta name="description" format="plain">
-    ASDM-CSV v.1.3
+    ASDM-CSV v.1.4
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
@@ -261,7 +261,7 @@
 		<!--RECURSOS FITs-->
 		<sources pattern="res/asdm/*.csv"></sources>
 		<!--ELEMENTOS GRAMMAR-->
-		<reGrammar>
+		<reGrammar recordCleaner="\2\0\1\1\.([0-1]\.[0-9]{5,}\.[S]\_[0-9]{4,}\-[0-9]{2,}\-[0-9]{2,})?">
 			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
 		</reGrammar>
 
