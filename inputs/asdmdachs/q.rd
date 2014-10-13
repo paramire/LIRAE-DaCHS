@@ -230,7 +230,12 @@
 	      verbLevel="5">
 	      <property name="std">1</property>
 	    </columns>
-	    <column name="sFov" type="text"
+	    <colums name="deliveryName" type="text"
+	      ucd="meta.code"
+	      description="Project Code"
+	      verbLavel="10">
+	    </columns>
+	    <!--<column name="sFov" type="text"
 	      description="Approximate spatial extent for the region covered by the
 	        observation"
 	      unit="deg" ucd="phys.angSize;instr.fov"
@@ -244,7 +249,7 @@
 	      ucd="spect.resolution"
 	      verbLevel="15">
 	      <property name="std">1</property>
-	    </column>
+	    </column>-->
  	<table>
 
 	<data id="import_content_obs_1">
@@ -296,14 +301,20 @@
 
 	<data id="import_content_obs_2">
 		<sources pattern="res/harv/*.csv"/>
-  	<reGrammar>
-  		<names>obsId, sFov, emResPower</names>
+  	<reGrammar topIgnoredLines="0">
+  		<names>obsId,projectCode</names>
   	</reGrammar>
   	<make table="asdm_har">
   		<rowmaker id="build_har">
+
+  			<apply name="cycle0ProyectCode">
+					<code>
+					# Cycle0 Proyect Code, ignoring the element
+					vars["deliveryName"] = @projectCode
+					</code>
+				</apply>
   			<map dest="obsId">@obsId</map>
-  			<map dest="sFov">@sFov</map>
-  			<map dest="emResPower">@emResPower</map>
+  			<map dest="deliveryName">@obsId</map>
   		</rowmaker>
   	</make>
 	</data>
