@@ -261,7 +261,7 @@
 		<!--RECURSOS FITs-->
 		<sources pattern="res/asdm/*.csv"></sources>
 		<!--ELEMENTOS GRAMMAR-->
-		<reGrammar recordCleaner="\2\0\1\1\.([0-1]\.[0-9]{5,}\.[S]\_[0-9]{4,}\-[0-9]{2,}\-[0-9]{2,})?">
+		<reGrammar recordCleaner="2011\.([0-1]\.[0-9]{5}\.[S]\_[0-9]{4}\-[0-9]{2,}\-[0-9]{2})?">
 			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
 		</reGrammar>
 
