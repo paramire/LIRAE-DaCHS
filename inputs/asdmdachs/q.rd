@@ -224,16 +224,16 @@
 
 	<table id="asdm_uid" onDisk="True" adql="True">
 	    <meta name="description">ASDM UID+PROJECT</meta>
-	    <columns name="uid" type="text" ucd="meta.id"
+	    <columns name="obsId" type="text" ucd="meta.id"
 	      utype="obscore:DataID.observationID"
 	      description="Unique identifier for an observation"
 	      verbLevel="5">
 	      <property name="std">1</property>
 	    </columns>
-	    <colums name="deliveryName" type="text"
+	    <columns name="deliveryName" type="text"
 	      ucd="meta.code"
 	      description="Project Code"
-	      verbLavel="10">
+	      verbLevel="10">
 	    </columns>
 	    <!--<column name="sFov" type="text"
 	      description="Approximate spatial extent for the region covered by the
@@ -250,7 +250,7 @@
 	      verbLevel="15">
 	      <property name="std">1</property>
 	    </column>-->
- 	<table>
+ 	</table>
 
 	<data id="import_content_obs_1">
 		<!--RECURSOS FITs-->
@@ -300,11 +300,11 @@
  	</data>
 
 	<data id="import_content_obs_2">
-		<sources pattern="res/harv/*.csv"/>
-  	<reGrammar topIgnoredLines="0">
-  		<names>obsId,projectCode</names>
+		<sources pattern="res/harv/*.csv"></sources>
+  	<reGrammar topIgnoredLines="1" recordSep=",">
+  		<names>obsId, projectCode, dateObs</names>
   	</reGrammar>
-  	<make table="asdm_har">
+  	<make table="asdm_uid">
   		<rowmaker id="build_har">
 
   			<apply name="cycle0ProyectCode">
@@ -314,9 +314,9 @@
 					</code>
 				</apply>
   			<map dest="obsId">@obsId</map>
-  			<map dest="deliveryName">@obsId</map>
+  			<map dest="deliveryName">@deliveryName</map>
+  			<map dest="dateObs">@dateObs</map>
   		</rowmaker>
   	</make>
 	</data>
 </resource>
-
