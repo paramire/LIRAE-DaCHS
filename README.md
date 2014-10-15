@@ -11,7 +11,3 @@ Problemas Permisos
 
 http://pastebin.com/HZC9hKYf
 
-Prueba
-====
-
-asdf
