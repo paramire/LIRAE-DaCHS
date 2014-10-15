@@ -3,11 +3,11 @@
   <meta name="title">ObsCore+ASDM</meta>
   <meta name="creationDate">2014-05-23T14:51:00Z</meta>
   <meta name="description" format="plain">
-    ASDM-CSV v.1.4
+    ASDM-CSV v.1.4.2
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
-  <meta name="subject">ASM</meta>
+  <meta name="subject">ASDM</meta>
   <meta name="facility">ALMA</meta>
 
 	<STREAM id="obscore-columns">
@@ -261,7 +261,7 @@
 		<!--RECURSOS FITs-->
 		<sources pattern="res/asdm/*.csv"></sources>
 		<!--ELEMENTOS GRAMMAR-->
-		<reGrammar recordCleaner="2011\.([0-1]\.[0-9]{5}\.[S]\_[0-9]{4}\-[0-9]{2,}\-[0-9]{2})?">
+		<reGrammar>
 			<names> prodType, calibLevel, collecName, obsId, targetName, sRa, sDec, sFov, sReg, sRes, tMin, tMax, tExptime, tResolution, emMin, emMax, emResPower, oUCD, polStates, facilityName, instName, noise, redshift, fitsName</names>
 		</reGrammar>
 
@@ -306,8 +306,11 @@
 
 	<data id="import_content_obs_2">
 		<sources pattern="res/harv/*.csv"></sources>
-  	<reGrammar topIgnoredLines="1" fieldSep=",">
-  		<names>obsId, projectCode, dateObs</names>
+  	<reGrammar topIgnoredLines="1" fieldsep=" " recordCleaner="(.*)\,(201[0-9])(\.[0-1A]\.[.*])\,(.*)">
+  		<ignoreOn name="cycle1">
+  			<keyIs key="year" value="2012"/>
+  		</ignoreOn>
+  		<names>obsId, year, projectCode, dateObs</names>
   	</reGrammar>
   	<make table="asdm_uid">
   		<rowmaker id="build_har">
