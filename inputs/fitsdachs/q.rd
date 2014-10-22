@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+FITS</meta>
   <meta name="creationDate">2014-08-12T18:01:00Z</meta>
   <meta name="description" format="plain">
-    ObsCore + FITS v.1.3
+    ObsCore + FITS v.1.4
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
@@ -57,8 +57,8 @@
 		<map dest="s_ra">@CRVAL2</map>
 		<apply procDef="//siap#computePGS"/>
 		<apply procDef="//siap#setMeta">
-			<bind name="title"></bind>
-			<bind name="instrument"></bind>
+			<bind name="title">"title1"</bind>
+			<bind name="instrument">"title2"</bind>
 		</apply>
   </rowmaker>
 
@@ -76,9 +76,9 @@
 	</data>
 
 	<service id="siapfits" allowed="form,siap.xml">
-    <meta name="shortName">SIAP CHIVO DaCHS</meta>
-    <meta name="title">"Sample image access"</meta>
-  	<publish render="siap.xml" sets="local"/>
+	    <meta name="shortName">SIAP CHIVO DaCHS</meta>
+	    <meta name="title">Sample image access</meta>
+	  	<publish render="siap.xml" sets="local"/>
  		<publish render="form" sets="local" />
 		<dbCore id="query_images" queriedTable="fits">
 		  <condDesc original="//siap#protoInput"/>
