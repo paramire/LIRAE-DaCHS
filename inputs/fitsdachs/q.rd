@@ -3,7 +3,7 @@
   <meta name="title">ObsCore+FITS</meta>
   <meta name="creationDate">2014-08-12T18:01:00Z</meta>
   <meta name="description" format="plain">
-    ObsCore + FITS v.1.1
+    ObsCore + FITS v.1.4
   </meta>
   <meta name="copyright">Free to use.</meta>
   <meta name="creator.name">ALMA</meta>
@@ -26,11 +26,14 @@
 		<mixin>
 			//siap#pgs
 		</mixin>
+		<mixin>
+			//scs#q3cindex
+		</mixin>
 		<!--DESCRIPTION-->
 		<meta name="description">
 		  ASDM+OBSCORE
 		</meta>
-		<column name="target_name" type="text" 
+		<column name="target_name" type="text"
 			description="Object a targeted observation targeted"
 			utype="obscore:target.name" ucd="meta.id;src"
 			verbLevel="15">
@@ -54,12 +57,15 @@
 		<map dest="s_ra">@CRVAL2</map>
 		<apply procDef="//siap#computePGS"/>
 		<apply procDef="//siap#setMeta">
+			<bind name="title">"title1"</bind>
+			<bind name="instrument">"title2"</bind>
 		</apply>
   </rowmaker>
 
 	<data id="import_content">
 		<sources recurse="True" pattern="res/*.fits"/>
 		<fitsProdGrammar qnd="True">
+			<maxHeaderBlocks>80</maxHeaderBlocks>
 			<rowfilter procDef="__system__/products#define">
 				<bind key="table">"fitsdachs.fits"</bind>
 			</rowfilter>
@@ -69,14 +75,24 @@
 		<make table="fits" rowmaker="build_fits"/>
 	</data>
 
-	<service id="fitsdachs" allowed="form,siap.xml">
-    <meta name="shortName">SIAP CHIVO DaCHS</meta>
-    <meta name="title">"Sample image access"</meta>
-  	<publish render="siap.xml" sets="local"/>
+	<service id="siapfits" allowed="form,siap.xml">
+	    <meta name="shortName">SIAP CHIVO DaCHS</meta>
+	    <meta name="title">Sample image access</meta>
+	  	<publish render="siap.xml" sets="local"/>
  		<publish render="form" sets="local" />
 		<dbCore id="query_images" queriedTable="fits">
 		  <condDesc original="//siap#protoInput"/>
 		  <condDesc original="//siap#humanInput"/>
 		</dbCore>
  	</service>
+
+ 	<service id="scsfits" allowed="form,scs.xml">
+  	<meta name="shortName">SCS CHIVO DaCHS</meta>
+    <dbCore queriedTable="fits">
+			<condDesc original="//scs#humanInput"/>
+			<condDesc original="//scs#protoInput"/>
+    </dbCore>
+    <publish render="scs.xml" sets="local"/>
+    <publish render="form" sets="local"/>
+  </service>
 </resource>

@@ -1,0 +1,155 @@
+		<!--<column name="sFov" type="text"
+			description="Approximate spatial extent for the region covered by the
+				observation"
+			unit="deg" ucd="phys.angSize;instr.fov"
+			utype="obscore:char.spatialaxis.coverage.bounds.extent.diameter"
+			verbLevel="5">
+			<property name="std">1</property>
+		</column>-->
+
+				<!--<column name="target_class" type="text" 
+			description="Class of the target object (star, QSO, ...)"
+			utype="obscore:target.class" ucd="src.class"
+			verbLevel="20">
+			<property name="std">1</property>
+		</column>-->
+
+				<!--<column name="obs_title" type="text"
+			utype="obscore:dataid.title" ucd="meta.title;obs"
+			description="Free-from title of the data set"
+			verbLevel="5"/>-->
+
+		<!--<column name="obs_publisher_did" type="text"
+			utype="obscore:curation.publisherdid" ucd="meta.ref.url;meta.curation"
+			description="Dataset identifier assigned by the publisher."
+			verbLevel="5">
+			<property name="std">1</property>
+		</column>-->
+
+		<!--<column name="obs_creator_did" type="text"
+			utype="obscore:dataid.creatordid" ucd="meta.id"
+			description="Dataset identifier assigned by the creator."
+			verbLevel="15"/>-->
+
+		<!--<column name="access_url" type="text"
+			utype="obscore:access.reference" ucd="meta.ref.url"
+			description="The URL at which to obtain the data set."
+			verbLevel="1" displayHint="type=url">
+			<property name="std">1</property>
+		</column>-->
+
+		<!--<column name="access_format" type="text"
+			description="MIME type of the resource at access_url"
+			utype="obscore:access.format" ucd="meta.code.mime"
+			verbLevel="5">
+			<property name="std">1</property>
+		</column>-->
+
+		<!--<column name="access_estsize" type="bigint"
+			description="Estimated size of data product"
+			unit="kbyte" utype="obscore:access.size" ucd="phys.size;meta.file"
+			verbLevel="5">
+			<property name="std">1</property>
+			<values nullLiteral="-1"/>
+		</column>-->
+
+				<!--<column name="dataproduct_subtype" type="text"
+			utype="obscore:obs.dataproductsubtype" ucd="meta.id"
+			description="Data product specific type"
+			verbLevel="15"/>-->
+
+			    <!--SERVICIO TAP-->
+    <register services="__system__/tap#run"/>
+
+    		<mixin
+			calibLevel="calibLevel"
+			collectionName="collecName"
+			targetName="targetName"
+			ra="sRa"
+			dec="sDec"
+			fov="sFov"
+			coverage="sReg"
+			sResolution="sRes"
+			tMin="tMin"
+			tMax="tMax"
+			expTime="tExptime"
+			tResolution="tRes"
+			emMin="emMin"
+			emMax="emMax"
+			emResPower="emResPower"
+			oUCD="oUCD"
+			polStates="polStates"
+			facilityName="facilityName"
+			instrumentName="instName">
+			//obscore#publish
+		</mixin>
+
+<<<<<<< HEAD
+	<table id="asdm_uid" onDisk="True" adql="False" primary="obsId">
+		<meta name="description">ASDM UID+PROJECT</meta>
+		<columns name="uid" type="text" ucd="meta.id"
+			utype="obscore:DataID.observationID"
+			description="Unique identifier for an observation"
+			verbLevel="5">
+			<property name="std">1</property>
+		</columns>
+		<column name="sFov" type="text"
+			description="Approximate spatial extent for the region covered by the
+				observation"
+			unit="deg" ucd="phys.angSize;instr.fov"
+			utype="obscore:char.spatialaxis.coverage.bounds.extent.diameter"
+			verbLevel="5">
+			<property name="std">1</property>
+		</column>
+		<column name="emResPower" type="double precision"
+			description="Spectral resolving power delta lambda/lamda"
+			utype="obscore:char.spectralaxis.resolution.resolpower.refval"
+			ucd="spect.resolution"
+			verbLevel="15">
+			<property name="std">1</property>
+		</column>
+
+
+		<viewStatement>
+			CREATE VIEW \\curtable (\\colNames)
+			AS (SELECT \\colNames
+			    FROM \\schema.asdm
+			    NATURAL JOIN \\schema.asdm_uid)
+		</viewStatement>
+	<table>
+
+=======
+
+  	<reGrammar>
+  		<names>obsId, sFov, emResPower</names>
+  	</reGrammar>
+
+  	  			<map dest="sFov">@sFov</map>
+  			<map dest="emResPower">@emResPower</map>
+
+<reGrammar topIgnoredLines="1" fieldsep=" " recordCleaner="(.*)\,(201[0-9])(\.[0-1A]\.[0-9]{5}\.[S]\_[0-9]{4}\-[0-9]{2}\-[0-9]{2})\,(.*)">
+
+
+		<data id="import_content_obs_2">
+		<sources pattern="res/harv/*.csv"></sources>
+  	<reGrammar topIgnoredLines="1" fieldsep=" " recordCleaner="(.*)\,(201[0-9])(\.[0-1A]\.[.*])\,(.*)">
+  		<ignoreOn name="cycle1">
+  			<keyIs key="year" value="2012"/>
+  		</ignoreOn>
+  		<names>obsId, year, projectCode, dateObs</names>
+  	</reGrammar>
+  	<make table="asdm_uid">
+  		<rowmaker id="build_har">
+
+  			<apply name="cycle0ProyectCode">
+					<code>
+					# Cycle0 Proyect Code, ignoring the element
+					vars["deliveryName"] = @projectCode
+					</code>
+				</apply>
+  			<map dest="obsId">@obsId</map>
+  			<map dest="deliveryName">@deliveryName</map>
+  			<map dest="dateObs">@dateObs</map>
+  		</rowmaker>
+  	</make>
+	</data>

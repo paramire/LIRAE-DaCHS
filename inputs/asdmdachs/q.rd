@@ -255,6 +255,12 @@
 	      verbLevel="15">
 	      <property name="std">1</property>
 	    </column>-->
+	    <viewStatement>
+			CREATE VIEW \curtable AS (
+					SELECT \colNames
+					FROM \schema.asdm as asdm
+					USING(obsId))
+		</viewStatement>
  	</table>
 
 	<data id="import_content_obs_1">
@@ -306,7 +312,7 @@
 
 	<data id="import_content_obs_2">
 		<sources pattern="res/harv/*.csv"></sources>
-  	<reGrammar topIgnoredLines="1" fieldsep=" " recordCleaner="(.*)\,(201[0-9])(\.[0-1A]\.[.*])\,(.*)">
+  	<reGrammar topIgnoredLines="1" fieldSep=" " recordCleaner="(.*)\,(201[0-9])(.*)\,(.*)">
   		<ignoreOn name="cycle1">
   			<keyIs key="year" value="2012"/>
   		</ignoreOn>
@@ -318,7 +324,7 @@
   			<apply name="cycle0ProyectCode">
 					<code>
 					# Cycle0 Proyect Code, ignoring the element
-					vars["deliveryName"] = @projectCode
+					vars["deliveryName"] = @year+@projectCode
 					</code>
 				</apply>
   			<map dest="obsId">@obsId</map>
