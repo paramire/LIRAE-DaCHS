@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <resource schema="fitsdachs">
-  <meta name="title">ObsCore+FITS</meta>
-  <meta name="creationDate">2014-08-12T18:01:00Z</meta>
-  <meta name="description" format="plain">
-    ObsCore + FITS v.1.4
-  </meta>
-  <meta name="copyright">Free to use.</meta>
-  <meta name="creator.name">ALMA</meta>
-  <meta name="subject">ASDM</meta>
-  <meta name="facility">ALMA</meta>
+  	<meta name="title">ObsCore+FITS</meta>
+ 	<meta name="creationDate">2014-08-12T18:01:00Z</meta>
+	<meta name="description" format="plain">
+    		ObsCore + FITS v.1.4
+  	</meta>
+  	<meta name="copyright">Free to use.</meta>
+  	<meta name="creator.name">ALMA</meta>
+  	<meta name="subject">ASDM</meta>
+ 	<meta name="facility">ALMA</meta>
 
 	<table id="fits" onDisk="True" adql="True">
 		<mixin
@@ -51,8 +51,8 @@
 		  verbLevel="10"/>
 	</table>
 
-  <rowmaker id="build_fits">
-  	<map dest="target_name">@OBJECT</map>
+	<rowmaker id="build_fits">
+  		<map dest="target_name">@OBJECT</map>
 		<map dest="s_dec">@CRVAL1</map>
 		<map dest="s_ra">@CRVAL2</map>
 		<apply procDef="//siap#computePGS"/>
@@ -60,7 +60,7 @@
 			<bind name="title">"title1"</bind>
 			<bind name="instrument">"title2"</bind>
 		</apply>
-  </rowmaker>
+	</rowmaker>
 
 	<data id="import_content">
 		<sources recurse="True" pattern="res/*.fits"/>
@@ -76,23 +76,23 @@
 	</data>
 
 	<service id="siapfits" allowed="form,siap.xml">
-	    <meta name="shortName">SIAP CHIVO DaCHS</meta>
-	    <meta name="title">Sample image access</meta>
+	    	<meta name="shortName">SIAP CHIVO DaCHS</meta>
+	    	<meta name="title">Sample image access</meta>
 	  	<publish render="siap.xml" sets="local"/>
  		<publish render="form" sets="local" />
 		<dbCore id="query_images" queriedTable="fits">
-		  <condDesc original="//siap#protoInput"/>
-		  <condDesc original="//siap#humanInput"/>
+			<condDesc original="//siap#protoInput"/>
+		  	<condDesc original="//siap#humanInput"/>
 		</dbCore>
  	</service>
 
  	<service id="scsfits" allowed="form,scs.xml">
-  	<meta name="shortName">SCS CHIVO DaCHS</meta>
-    <dbCore queriedTable="fits">
+  		<meta name="shortName">SCS CHIVO DaCHS</meta>
+    		<dbCore queriedTable="fits">
 			<condDesc original="//scs#humanInput"/>
 			<condDesc original="//scs#protoInput"/>
-    </dbCore>
-    <publish render="scs.xml" sets="local"/>
-    <publish render="form" sets="local"/>
-  </service>
+    		</dbCore>
+    		<publish render="scs.xml" sets="local"/>
+    		<publish render="form" sets="local"/>
+	</service>
 </resource>

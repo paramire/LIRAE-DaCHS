@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <resource schema="asdmdachs">
-  <meta name="title">ObsCore+ASDM</meta>
-  <meta name="creationDate">2014-05-23T14:51:00Z</meta>
-  <meta name="description" format="plain">
-    ASDM-CSV v.1.4.2
-  </meta>
-  <meta name="copyright">Free to use.</meta>
-  <meta name="creator.name">ALMA</meta>
-  <meta name="subject">ASDM</meta>
-  <meta name="facility">ALMA</meta>
+	<meta name="title">ObsCore+ASDM</meta>
+  	<meta name="creationDate">2014-05-23T14:51:00Z</meta>
+  	<meta name="description" format="plain">
+    		ASDM-CSV v.1.4.2
+  	</meta>
+  	<meta name="copyright">Free to use.</meta>
+  	<meta name="creator.name">ALMA</meta>
+  	<meta name="subject">ASDM</meta>
+  	<meta name="facility">ALMA</meta>
 
 	<STREAM id="obscore-columns">
 		<column name="prodType" type="text"
