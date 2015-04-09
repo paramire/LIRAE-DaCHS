@@ -1,4 +1,5 @@
-/cache
-/logs
-/tmp
-/inputs/cycle0fits/*.fits
+cache
+logs
+tmp
+inputs/cycle0fits/*.fits
+state/*
