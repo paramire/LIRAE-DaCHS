@@ -2,4 +2,4 @@ cache
 logs
 tmp
 inputs/cycle0fits/*.fits
-state/*
+state
