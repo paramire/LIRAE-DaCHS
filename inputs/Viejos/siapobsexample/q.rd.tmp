@@ -1,9 +1,0 @@
-			  <condDesc buildFrom="bandpassId" />
-			  <condDesc>
-			    <inputKey name="object" type="text"
-			        tablehead="Target Object"
-			        description="Object being observed, Simbad-resolvable form"
-			        ucd="meta.name" verbLevel="5" required="True">
-			        <values fromdb="object FROM siapobsexample.spe"/>
-			    </inputKey>
-			  </condDesc>
