@@ -61,6 +61,7 @@
 		<apply procDef="//siap#setMeta">
 			<bind name="title">@OBJECT</bind>
 			<bind name="instrument">"ALMA/CASA"</bind>
+			<bind name="dateObs">@DATE-OBS</bind>
 		</apply>
   </rowmaker>
 
