@@ -61,13 +61,14 @@
 		<apply procDef="//siap#setMeta">
 			<bind name="title">@OBJECT</bind>
 			<bind name="instrument">"ALMA/CASA"</bind>
+			<bind name="dateObs">@DATE_OBS</bind>
 		</apply>
   </rowmaker>
 
 	<data id="import_content">
 		<sources pattern="*.fits"/>
 		<fitsProdGrammar qnd="True">
-			<maxHeaderBlocks>200</maxHeaderBlocks>
+			<maxHeaderBlocks>326</maxHeaderBlocks>
 			<rowfilter procDef="__system__/products#define">
 				<bind key="table">"alma-fits.cycle0"</bind>
 			</rowfilter>
